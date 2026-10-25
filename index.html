@@ -15,7 +15,304 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Boaz Electronics Solutions","telephone":"+255765478390","email":"boazshyndika@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Dodoma","addressCountry":"TZ"},"openingHours":"Mo-Sa 08:00-19:00","image":"banner.jpg"}
 </script>
-<link rel="stylesheet" href="style.css">
+<style>
+:root{
+  --brand:#e87f0e; --brand-dark:#c96d0a; --brand-soft:#fff3e4;
+  --navy:#0f2a44; --navy2:#16385a;
+  --bg:#ffffff; --surface:#f5f7fa; --card:#ffffff;
+  --text:#14181f; --muted:#5b6574; --border:#e3e7ed;
+  --wa:#25d366; --radius:14px;
+  --shadow:0 1px 2px rgba(15,30,50,.06),0 8px 24px rgba(15,30,50,.07);
+  --shadow-lg:0 2px 4px rgba(15,30,50,.06),0 20px 50px rgba(15,30,50,.14);
+}
+[data-theme="dark"]{
+  --bg:#0c1118; --surface:#121a24; --card:#161f2b;
+  --text:#eef2f7; --muted:#9aa6b6; --border:#243142; --brand-soft:#2a1d0c;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  --shadow-lg:0 2px 4px rgba(0,0,0,.4),0 20px 50px rgba(0,0,0,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em;font-weight:800}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+.container{max-width:1200px;margin:0 auto;padding:0 22px}
+.i{width:1.25em;height:1.25em;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.i.fill{fill:currentColor;stroke:none}
+section{padding:90px 0}
+.alt{background:var(--surface)}
+.sec-head{max-width:680px;margin:0 auto 48px;text-align:center}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:12px}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+.eyebrow{display:inline-block;color:var(--brand);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 26px;border-radius:10px;font-weight:700;font-size:.95rem;border:2px solid transparent;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-dark);box-shadow:0 8px 20px rgba(232,127,14,.35)}
+.btn-wa{background:var(--wa);color:#05230f}
+.btn-outline{border-color:var(--border);color:var(--text);background:var(--card)}
+.btn-outline:hover{border-color:var(--brand);color:var(--brand)}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-sm{padding:9px 16px;font-size:.85rem}
+
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--brand);z-index:3000}
+
+/* promo bar */
+.promo{background:var(--navy);color:#dbe6f2;font-size:.82rem;font-weight:500}
+.promo .container{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px}
+.promo b{color:#fff}
+.promo .status{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:#8aa}
+.dot.open{background:var(--wa);animation:ping 2s infinite}
+.dot.closed{background:#ef5350}
+@keyframes ping{70%{box-shadow:0 0 0 8px rgba(37,211,102,0)}0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}}
+
+/* header */
+header.site{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+[data-theme="dark"] header.site{background:rgba(12,17,24,.92)}
+.hdr{display:flex;align-items:center;gap:26px;height:70px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center}
+.brand small{display:block;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:2px;margin-right:auto}
+.nav>li{position:relative}
+.nav>li>a,.nav>li>button{display:flex;align-items:center;gap:5px;padding:10px 14px;border-radius:8px;font-weight:600;font-size:.93rem;background:none;border:0;color:var(--text)}
+.nav>li>a:hover,.nav>li>button:hover,.nav>li>a.active{background:var(--surface);color:var(--brand)}
+.nav .i{width:1em;height:1em}
+.menu{position:absolute;top:100%;left:0;width:340px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}
+.has-menu:hover .menu,.has-menu:focus-within .menu{opacity:1;visibility:visible;transform:none}
+.menu a{display:block;padding:12px 14px;border-radius:10px}
+.menu a:hover{background:var(--surface)}
+.menu b{display:block;font-size:.93rem}
+.menu span{font-size:.82rem;color:var(--muted)}
+.hdr-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--border);color:var(--text);font-size:.75rem;font-weight:800;transition:.2s}
+.icon-btn:hover{border-color:var(--brand);color:var(--brand)}
+#themeBtn .moon{display:none}
+[data-theme="dark"] #themeBtn .sun{display:none}
+[data-theme="dark"] #themeBtn .moon{display:block}
+.burger{display:none}
+
+/* hero */
+.hero{position:relative;color:#fff;padding:110px 0 190px;background:var(--navy) url('banner.jpg') center/cover;text-align:center;isolation:isolate}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,42,68,.88),rgba(15,42,68,.78) 60%,rgba(15,42,68,.95));z-index:-1}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:900px;margin:0 auto 18px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p.lead{font-size:1.2rem;color:#cbd9e8;max-width:640px;margin:0 auto 34px}
+.finder{max-width:700px;margin:0 auto;display:flex;background:#fff;border-radius:14px;padding:7px;box-shadow:var(--shadow-lg)}
+.finder .i{align-self:center;margin:0 10px 0 14px;color:#8794a6}
+.finder input{flex:1;border:0;outline:0;font:inherit;font-size:1rem;color:#14181f;background:none;min-width:0}
+.finder .btn{padding:12px 24px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.quick button{padding:7px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;font-size:.84rem;font-weight:600;transition:.2s}
+.quick button:hover{background:var(--brand);border-color:var(--brand)}
+
+/* tiles overlap */
+.tiles{margin-top:-120px;position:relative;z-index:2;padding:0 0 20px}
+.tiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tile{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-lg);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--border)}
+.tile-img{height:150px;background:var(--navy2) center/cover;position:relative}
+.tile-img::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(15,42,68,.75))}
+.tile-img .i{position:absolute;z-index:1;left:22px;bottom:16px;width:2rem;height:2rem;color:#fff}
+.tile-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.tile .num{font-size:2.3rem;font-weight:800;color:var(--brand);line-height:1}
+.tile .num small{display:block;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.tile h3{font-size:1.2rem;margin:16px 0 8px}
+.tile p{color:var(--muted);font-size:.94rem;flex:1}
+.tile .link{margin-top:16px}
+.link{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:var(--brand);font-size:.92rem;transition:gap .2s}
+.link:hover{gap:12px}
+
+/* device grid */
+.dev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.dev{display:flex;align-items:center;gap:14px;padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);font-weight:700;transition:.2s;text-align:left;color:var(--text)}
+.dev:hover{border-color:var(--brand);box-shadow:var(--shadow);transform:translateY(-3px)}
+.dev .ic{width:46px;height:46px;border-radius:12px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-size:1.3rem}
+.dev small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
+
+/* services */
+.svc-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.tab{padding:9px 20px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-weight:600;font-size:.88rem;color:var(--muted);transition:.2s}
+.tab.active,.tab:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+[data-theme="dark"] .tab.active,[data-theme="dark"] .tab:hover{background:var(--brand);border-color:var(--brand)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:.25s;position:relative}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-5px);border-color:transparent}
+.card.hide{display:none}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;margin-bottom:18px;font-size:1.4rem}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.93rem}
+.card .link{margin-top:16px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding:28px 24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:22px;width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center}
+.step h4{font-size:1.05rem;margin:6px 0 8px}
+.step p{color:var(--muted);font-size:.92rem}
+
+/* about / gallery */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.split img.main{width:100%;height:460px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-lg);background:var(--surface)}
+.split h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:14px}
+.split>div>p{color:var(--muted);margin-bottom:22px}
+.checks li{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.checks .i{color:var(--brand);margin-top:3px}
+.checks b{display:block}
+.checks span{color:var(--muted);font-size:.9rem}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gal{position:relative;height:250px;border-radius:var(--radius);overflow:hidden;cursor:zoom-in;background:var(--surface);border:1px solid var(--border)}
+.gal.wide{grid-column:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal:hover img{transform:scale(1.07)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;color:#fff;background:linear-gradient(transparent,rgba(10,20,35,.85));font-weight:700;font-size:.92rem}
+.lightbox{position:fixed;inset:0;z-index:4000;background:rgba(8,14,24,.92);display:none;align-items:center;justify-content:center;padding:30px}
+.lightbox.open{display:flex}
+.lightbox img{max-height:82vh;max-width:92vw;border-radius:12px}
+.lb{position:absolute;background:rgba(255,255,255,.12);border-color:transparent;color:#fff}
+.lb-close{top:20px;right:20px}.lb-prev{left:20px;top:50%}.lb-next{right:20px;top:50%}
+.lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#dfe6f2;font-size:.9rem}
+
+/* pricing */
+.price{display:flex;flex-direction:column;padding:34px 28px}
+.price.featured{border:2px solid var(--brand);position:relative;box-shadow:var(--shadow-lg)}
+.price .tag{position:absolute;top:-13px;left:24px;background:var(--brand);color:#fff;font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
+.price .amt{font-size:2.8rem;font-weight:800;margin:10px 0 4px}
+.price .amt small{font-size:.9rem;font-weight:600;color:var(--muted)}
+.price .sub{color:var(--muted);font-size:.9rem;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.price ul{flex:1;margin-bottom:24px}
+.price li{display:flex;gap:10px;align-items:center;padding:7px 0;font-size:.93rem}
+.price li .i{color:var(--brand)}
+.note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:24px}
+
+/* tips */
+.tip{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.tip-top{height:8px;background:var(--brand)}
+.tip-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.tag-s{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:10px}
+.tip h3{font-size:1.1rem;margin-bottom:8px}
+.tip p{color:var(--muted);font-size:.92rem}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+/* testimonials */
+.stars{display:flex;gap:3px;color:var(--brand);margin-bottom:14px}
+.stars .i{fill:currentColor;width:1.05em;height:1.05em}
+.testi p{color:var(--muted);margin-bottom:20px;font-size:.96rem}
+.who{display:flex;gap:12px;align-items:center}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center;font-size:.9rem}
+.who span{display:block;font-size:.8rem;color:var(--muted)}
+
+/* faq */
+.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 24px;background:none;border:0;color:var(--text);font-size:1rem;font-weight:700;text-align:left}
+.faq-q .i{color:var(--brand);transition:transform .3s}
+.faq-item.open .faq-q .i{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s}
+.faq-a p{padding:0 24px 22px;color:var(--muted);font-size:.94rem}
+
+/* join band */
+.band{background:var(--navy);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+.band::before{content:'';position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(232,127,14,.25);z-index:-1}
+.band::after{content:'';position:absolute;left:-60px;bottom:-100px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.06);z-index:-1}
+.band h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:10px}
+.band p{color:#cbd9e8;max-width:520px;margin:0 auto 26px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px}
+.c-card{display:flex;gap:16px;align-items:center;padding:18px 20px;margin-bottom:14px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius)}
+.c-card .ico{margin:0;width:48px;height:48px}
+.c-card small{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.c-card strong{font-size:.97rem}
+.c-card .icon-btn{margin-left:auto}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.social{display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:.85rem;font-weight:600;transition:.2s}
+.social:hover{border-color:var(--brand);color:var(--brand)}
+.form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+.form h3{font-size:1.3rem;margin-bottom:20px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{display:flex;flex-direction:column;gap:6px}
+.fg.full{grid-column:1/-1}
+.fg label{font-size:.84rem;font-weight:700}
+.fg input,.fg select,.fg textarea{background:var(--bg);border:1.5px solid var(--border);color:var(--text);border-radius:10px;padding:12px 14px;font:inherit;font-size:.94rem;outline:none;transition:.2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(232,127,14,.15)}
+.fg textarea{min-height:100px;resize:vertical}
+.fg .err{display:none;font-size:.75rem;color:#e53935}
+.fg.invalid input,.fg.invalid select{border-color:#e53935}
+.fg.invalid .err{display:block}
+.form .btn{width:100%;margin-top:18px}
+.map{margin-top:34px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.map iframe{width:100%;height:380px;border:0;display:block}
+
+/* brands */
+.brands{padding:46px 0;border-top:1px solid var(--border)}
+.brands h4{text-align:center;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.brand-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 14px}
+.brand-row span{padding:9px 18px;border:1px solid var(--border);border-radius:999px;font-weight:700;font-size:.9rem;color:var(--muted);background:var(--card)}
+
+/* footer */
+footer{background:var(--navy);color:#b6c5d6;padding:70px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:46px}
+footer .brand{color:#fff}
+footer .brand small{color:#8fa4bb}
+footer p{margin:16px 0 20px;font-size:.92rem}
+footer h4{color:#fff;margin-bottom:16px;font-size:.95rem}
+footer li{margin-bottom:10px}
+footer li a{font-size:.92rem;transition:.2s}
+footer li a:hover{color:var(--brand)}
+.foot-soc{display:flex;gap:10px}
+.foot-soc .icon-btn{background:rgba(255,255,255,.08);border-color:transparent;color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;text-align:center;font-size:.85rem}
+
+/* floating */
+.wa-float{position:fixed;left:22px;bottom:22px;z-index:900;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 8px 26px rgba(37,211,102,.45);animation:ping 2.4s infinite}
+.to-top{position:fixed;right:22px;bottom:22px;z-index:900;opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s;box-shadow:var(--shadow)}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:var(--navy);color:#fff;padding:12px 22px;border-radius:999px;font-size:.88rem;font-weight:600;opacity:0;pointer-events:none;transition:.3s;z-index:5000}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+@media (max-width:1000px){
+  .tiles-grid,.grid-3{grid-template-columns:repeat(2,1fr)}
+  .dev-grid,.tips-grid,.steps{grid-template-columns:repeat(2,1fr)}
+  .split,.contact-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .steps{row-gap:34px}
+}
+@media (max-width:900px){
+  .burger{display:grid}
+  .hdr-cta{display:none}
+  .nav{position:fixed;top:0;right:-100%;bottom:0;width:min(330px,88vw);background:var(--bg);flex-direction:column;padding:84px 18px 24px;gap:2px;box-shadow:var(--shadow-lg);transition:right .35s;overflow-y:auto;margin:0}
+  .nav.open{right:0}
+  .nav>li>a,.nav>li>button{width:100%;padding:13px 14px}
+  .has-menu>button .i{display:none}
+  .menu{position:static;width:100%;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 8px 10px;background:none}
+  .menu span{display:none}
+  .menu a{padding:9px 14px}
+  .burger{position:relative;z-index:1100}
+  .hdr-actions{margin-left:auto}
+}
+@media (max-width:640px){
+  section{padding:64px 0}
+  .promo .hide-s{display:none}
+  .hero{padding:70px 0 160px}
+  .finder{flex-direction:column;gap:8px;padding:10px}
+  .finder .i{display:none}
+  .finder input{padding:10px 8px}
+  .tiles-grid,.grid-3,.dev-grid,.tips-grid,.steps,.gal-grid,.fgrid,.foot-grid{grid-template-columns:1fr}
+  .gal.wide{grid-column:auto}
+  .form{padding:22px}
+  .band{padding:40px 22px}
+  .brand small{display:none}
+}
+</style>
 </head>
 <body>
 
@@ -90,14 +387,14 @@
           <a href="#devices"><b>Repair by Device</b><span>Phones, tablets, laptops, TVs and more.</span></a>
           <a href="#services"><b>All Services</b><span>Screens, unlocking, micro-soldering, batteries.</span></a>
           <a href="#how"><b>How It Works</b><span>From free diagnosis to warranty pickup.</span></a>
-          <a href="tips.html"><b>Repair Tips</b><span>What to do before you bring it in.</span></a>
+          <a href="#tips"><b>Repair Tips</b><span>What to do before you bring it in.</span></a>
         </div>
       </li>
       <li class="has-menu">
         <button type="button">Shop &amp; Pricing <svg class="i"><use href="#i-down"/></svg></button>
         <div class="menu">
           <a href="#pricing"><b>Service Pricing</b><span>Transparent starting prices.</span></a>
-          <a href="spare-parts.html"><b>Spare Parts</b><span>Screens, batteries, chargers, cases.</span></a>
+          <a href="https://wa.me/255765478390?text=I%20want%20to%20buy%20spare%20parts" target="_blank" rel="noopener"><b>Spare Parts</b><span>Screens, batteries, chargers, cases.</span></a>
         </div>
       </li>
       <li class="has-menu">
@@ -178,14 +475,14 @@
       <p>Pick your device type and message us. We'll reply with a free estimate.</p>
     </div>
     <div class="dev-grid">
-      <a class="dev reveal" href="device.html?type=phone"><span class="ic"><svg class="i"><use href="#i-smartphone"/></svg></span><span>Phone<small>Android &amp; iPhone</small></span></a>
-      <a class="dev reveal" href="device.html?type=tablet"><span class="ic"><svg class="i"><use href="#i-tablet"/></svg></span><span>Tablet<small>iPad &amp; Android</small></span></a>
-      <a class="dev reveal" href="device.html?type=laptop"><span class="ic"><svg class="i"><use href="#i-laptop"/></svg></span><span>Laptop<small>All major brands</small></span></a>
-      <a class="dev reveal" href="device.html?type=desktop"><span class="ic"><svg class="i"><use href="#i-monitor"/></svg></span><span>Desktop PC<small>Upgrades &amp; repair</small></span></a>
-      <a class="dev reveal" href="device.html?type=console"><span class="ic"><svg class="i"><use href="#i-gamepad"/></svg></span><span>Game console<small>Controllers too</small></span></a>
-      <a class="dev reveal" href="device.html?type=tv"><span class="ic"><svg class="i"><use href="#i-tv"/></svg></span><span>TV<small>Ask for a quote</small></span></a>
-      <a class="dev reveal" href="device.html?type=audio"><span class="ic"><svg class="i"><use href="#i-speaker"/></svg></span><span>Speaker / Audio<small>Sound faults</small></span></a>
-      <a class="dev reveal" href="device.html?type=watch"><span class="ic"><svg class="i"><use href="#i-watch"/></svg></span><span>Smartwatch<small>Battery &amp; screen</small></span></a>
+      <button class="dev reveal" data-dev="Phone"><span class="ic"><svg class="i"><use href="#i-smartphone"/></svg></span><span>Phone<small>Android &amp; iPhone</small></span></button>
+      <button class="dev reveal" data-dev="Tablet"><span class="ic"><svg class="i"><use href="#i-tablet"/></svg></span><span>Tablet<small>iPad &amp; Android</small></span></button>
+      <button class="dev reveal" data-dev="Laptop"><span class="ic"><svg class="i"><use href="#i-laptop"/></svg></span><span>Laptop<small>All major brands</small></span></button>
+      <button class="dev reveal" data-dev="Desktop PC"><span class="ic"><svg class="i"><use href="#i-monitor"/></svg></span><span>Desktop PC<small>Upgrades &amp; repair</small></span></button>
+      <button class="dev reveal" data-dev="Game console"><span class="ic"><svg class="i"><use href="#i-gamepad"/></svg></span><span>Game console<small>Controllers too</small></span></button>
+      <button class="dev reveal" data-dev="TV"><span class="ic"><svg class="i"><use href="#i-tv"/></svg></span><span>TV<small>Ask for a quote</small></span></button>
+      <button class="dev reveal" data-dev="Speaker / Audio"><span class="ic"><svg class="i"><use href="#i-speaker"/></svg></span><span>Speaker / Audio<small>Sound faults</small></span></button>
+      <button class="dev reveal" data-dev="Smartwatch"><span class="ic"><svg class="i"><use href="#i-watch"/></svg></span><span>Smartwatch<small>Battery &amp; screen</small></span></button>
     </div>
   </div>
 </section>
@@ -202,12 +499,12 @@
       <button class="tab active" data-f="all">All</button><button class="tab" data-f="phone">Phones</button><button class="tab" data-f="software">Software</button><button class="tab" data-f="computer">Computers</button><button class="tab" data-f="shop">Shop</button>
     </div>
     <div class="grid-3" id="svcGrid">
-      <article class="card reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-smartphone"/></svg></div><h3>Phone Screen Repair</h3><p>Cracked or broken screen? We replace LCD and OLED displays for all major brands with original and high-quality parts.</p><a class="link" href="screen-repair.html">Book repair <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card reveal" data-cat="software"><div class="ico"><svg class="i"><use href="#i-unlock"/></svg></div><h3>Software Unlocking</h3><p>FRP bypass, pattern unlock, IMEI repair, network unlock and flashing using UMT Box, Miracle Box and more.</p><a class="link" href="software-unlocking.html">Get help <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-micro"/></svg></div><h3>Micro Soldering</h3><p>Board-level repair: IC replacement, charge port, baseband and component-level fixes.</p><a class="link" href="micro-soldering.html">Learn more <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-battery"/></svg></div><h3>Battery Replacement</h3><p>Original battery replacement for phones, tablets and laptops. Restore power and performance.</p><a class="link" href="battery-replacement.html">Book now <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card reveal" data-cat="computer"><div class="ico"><svg class="i"><use href="#i-laptop"/></svg></div><h3>Computer Repair</h3><p>Laptop and desktop repair: OS installation, virus removal, hardware upgrades and data recovery.</p><a class="link" href="computer-repair.html">Get quote <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card reveal" data-cat="shop"><div class="ico"><svg class="i"><use href="#i-bag"/></svg></div><h3>Spare Parts &amp; Accessories</h3><p>Quality spare parts, screens, batteries, chargers and cases for all phone brands at the best prices.</p><a class="link" href="spare-parts.html">Shop now <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-smartphone"/></svg></div><h3>Phone Screen Repair</h3><p>Cracked or broken screen? We replace LCD and OLED displays for all major brands with original and high-quality parts.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20screen%20repair%20service" target="_blank" rel="noopener">Book repair <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="software"><div class="ico"><svg class="i"><use href="#i-unlock"/></svg></div><h3>Software Unlocking</h3><p>FRP bypass, pattern unlock, IMEI repair, network unlock and flashing using UMT Box, Miracle Box and more.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20software%20unlocking" target="_blank" rel="noopener">Get help <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-micro"/></svg></div><h3>Micro Soldering</h3><p>Board-level repair: IC replacement, charge port, baseband and component-level fixes.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20micro%20soldering%20service" target="_blank" rel="noopener">Learn more <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-battery"/></svg></div><h3>Battery Replacement</h3><p>Original battery replacement for phones, tablets and laptops. Restore power and performance.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20battery%20replacement" target="_blank" rel="noopener">Book now <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="computer"><div class="ico"><svg class="i"><use href="#i-laptop"/></svg></div><h3>Computer Repair</h3><p>Laptop and desktop repair: OS installation, virus removal, hardware upgrades and data recovery.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20computer%20repair" target="_blank" rel="noopener">Get quote <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="shop"><div class="ico"><svg class="i"><use href="#i-bag"/></svg></div><h3>Spare Parts &amp; Accessories</h3><p>Quality spare parts, screens, batteries, chargers and cases for all phone brands at the best prices.</p><a class="link" href="https://wa.me/255765478390?text=I%20want%20to%20buy%20spare%20parts" target="_blank" rel="noopener">Shop now <svg class="i"><use href="#i-arrow"/></svg></a></article>
     </div>
   </div>
 </section>
@@ -277,20 +574,20 @@
         <div class="ico"><svg class="i"><use href="#i-unlock"/></svg></div><h3>Software Solutions</h3>
         <div class="amt">TSh 10K<small> starting</small></div><div class="sub">Unlocking &amp; flashing</div>
         <ul><li><svg class="i"><use href="#i-check"/></svg>FRP / Google bypass</li><li><svg class="i"><use href="#i-check"/></svg>Pattern / PIN unlock</li><li><svg class="i"><use href="#i-check"/></svg>Phone flashing</li><li><svg class="i"><use href="#i-check"/></svg>IMEI repair</li><li><svg class="i"><use href="#i-check"/></svg>Network unlock</li></ul>
-        <a class="btn btn-outline" href="software-unlocking.html">View details &amp; quote</a>
+        <a class="btn btn-outline" href="https://wa.me/255765478390?text=I%20need%20software%20unlocking%20service.%20Price?" target="_blank" rel="noopener">Get quote</a>
       </div>
       <div class="card price featured reveal">
         <span class="tag">Most popular</span>
         <div class="ico"><svg class="i"><use href="#i-micro"/></svg></div><h3>Hardware Repair</h3>
         <div class="amt">TSh 25K<small> starting</small></div><div class="sub">Screen, board &amp; component</div>
         <ul><li><svg class="i"><use href="#i-check"/></svg>Screen replacement</li><li><svg class="i"><use href="#i-check"/></svg>Battery replacement</li><li><svg class="i"><use href="#i-check"/></svg>Charging port repair</li><li><svg class="i"><use href="#i-check"/></svg>Micro soldering / IC</li><li><svg class="i"><use href="#i-check"/></svg>Warranty included</li></ul>
-        <a class="btn btn-primary" href="screen-repair.html">View details &amp; quote</a>
+        <a class="btn btn-primary" href="https://wa.me/255765478390?text=I%20need%20hardware%20repair%20service.%20Price?" target="_blank" rel="noopener">Get quote</a>
       </div>
       <div class="card price reveal">
         <div class="ico"><svg class="i"><use href="#i-laptop"/></svg></div><h3>Computer Services</h3>
         <div class="amt">TSh 15K<small> starting</small></div><div class="sub">Laptop &amp; desktop repair</div>
         <ul><li><svg class="i"><use href="#i-check"/></svg>OS installation</li><li><svg class="i"><use href="#i-check"/></svg>Virus removal</li><li><svg class="i"><use href="#i-check"/></svg>Data recovery</li><li><svg class="i"><use href="#i-check"/></svg>Hardware upgrade</li><li><svg class="i"><use href="#i-check"/></svg>Screen replacement</li></ul>
-        <a class="btn btn-outline" href="computer-repair.html">View details &amp; quote</a>
+        <a class="btn btn-outline" href="https://wa.me/255765478390?text=I%20need%20computer%20repair%20service.%20Price?" target="_blank" rel="noopener">Get quote</a>
       </div>
     </div>
     <p class="note">Every device gets a free diagnosis before you pay anything.</p>
@@ -306,10 +603,10 @@
       <p>Simple things that protect your device and your data.</p>
     </div>
     <div class="tips-grid">
-      <article class="card tip reveal"><div class="tip-top"></div><div class="tip-body"><div class="tag-s">Screens</div><h3>Cracked screen?</h3><p>Cover the cracks with clear tape to avoid cuts and keep dust out, and back up your data. Repair early before the touch layer fails.</p><a class="link" href="tips.html#screens" style="margin-top:14px">Read more <svg class="i"><use href="#i-arrow"/></svg></a></div></article>
-      <article class="card tip reveal"><div class="tip-top"></div><div class="tip-body"><div class="tag-s">Water damage</div><h3>Phone got wet?</h3><p>Switch it off, don't charge it, and remove the case and SIM. Bring it in fast: corrosion spreads quickly. Rice doesn't help.</p><a class="link" href="tips.html#water" style="margin-top:14px">Read more <svg class="i"><use href="#i-arrow"/></svg></a></div></article>
-      <article class="card tip reveal"><div class="tip-top"></div><div class="tip-body"><div class="tag-s">Batteries</div><h3>Swollen battery</h3><p>If the back lifts or the screen bulges, stop charging and using it. Don't press or puncture it. Get it replaced right away.</p><a class="link" href="tips.html#battery" style="margin-top:14px">Read more <svg class="i"><use href="#i-arrow"/></svg></a></div></article>
-      <article class="card tip reveal"><div class="tip-top"></div><div class="tag-s" style="padding:24px 24px 0">Locks</div><div class="tip-body" style="padding-top:0"><h3>Locked out?</h3><p>Bring proof you own the device and any account details you remember. We only unlock devices that belong to the customer.</p><a class="link" href="tips.html#locks" style="margin-top:14px">Read more <svg class="i"><use href="#i-arrow"/></svg></a></div></article>
+      <article class="card tip reveal"><div class="tip-top"></div><div class="tip-body"><div class="tag-s">Screens</div><h3>Cracked screen?</h3><p>Cover the cracks with clear tape to avoid cuts and keep dust out, and back up your data. Repair early before the touch layer fails.</p></div></article>
+      <article class="card tip reveal"><div class="tip-top"></div><div class="tip-body"><div class="tag-s">Water damage</div><h3>Phone got wet?</h3><p>Switch it off, don't charge it, and remove the case and SIM. Bring it in fast: corrosion spreads quickly. Rice doesn't help.</p></div></article>
+      <article class="card tip reveal"><div class="tip-top"></div><div class="tip-body"><div class="tag-s">Batteries</div><h3>Swollen battery</h3><p>If the back lifts or the screen bulges, stop charging and using it. Don't press or puncture it. Get it replaced right away.</p></div></article>
+      <article class="card tip reveal"><div class="tip-top"></div><div class="tag-s" style="padding:24px 24px 0">Locks</div><div class="tip-body" style="padding-top:0"><h3>Locked out?</h3><p>Bring proof you own the device and any account details you remember. We only unlock devices that belong to the customer.</p></div></article>
     </div>
   </div>
 </section>
@@ -422,7 +719,7 @@
           <a class="icon-btn" href="https://tiktok.com/@boazelectronics" target="_blank" rel="noopener" aria-label="TikTok"><svg class="i"><use href="#i-tt"/></svg></a>
         </div>
       </div>
-      <div><h4>Services</h4><ul><li><a href="screen-repair.html">Phone Screen Repair</a></li><li><a href="software-unlocking.html">Software Unlocking</a></li><li><a href="micro-soldering.html">Micro Soldering</a></li><li><a href="battery-replacement.html">Battery Replacement</a></li><li><a href="computer-repair.html">Computer Repair</a></li><li><a href="spare-parts.html">Spare Parts</a></li><li><a href="tips.html">Repair tips</a></li></ul></div>
+      <div><h4>Fix your device</h4><ul><li><a href="#devices">Repair by device</a></li><li><a href="#services">All services</a></li><li><a href="#how">How it works</a></li><li><a href="#tips">Repair tips</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#gallery">Workshop</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+255765478390">+255 765 478 390</a></li><li><a href="mailto:boazshyndika@gmail.com">boazshyndika@gmail.com</a></li><li><a href="#contact">Dodoma, Tanzania</a></li><li><a href="#contact">Mon–Sat: 8AM – 7PM</a></li></ul></div>
     </div>
@@ -442,6 +739,145 @@
   <div class="lb-cap" id="lbCap"></div>
 </div>
 
-<script src="main.js" defer></script>
+<script>
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const WA='255765478390';
+const waLink=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+$('#year').textContent=new Date().getFullYear();
+$$('[data-stars]').forEach(s=>s.innerHTML='<svg class="i"><use href="#i-star"/></svg>'.repeat(5));
+
+/* toast */
+const toast=$('#toast');
+function say(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}
+
+/* theme */
+const root=document.documentElement;
+root.dataset.theme=store.get('boaz-theme')||'light';
+$('#themeBtn').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';store.set('boaz-theme',root.dataset.theme)};
+
+/* language */
+const SW={
+ nav_contact:'Mawasiliano',
+ hero_h1:'Usikubali <em>kuharibika</em> kuwa jibu la mwisho',
+ hero_p:'Matengenezo ya simu, kufungua software, micro-soldering na huduma za kompyuta Dodoma. Tunarekebisha ambavyo wengine hawawezi.',
+ svc_eyebrow:'Huduma', svc_h2:'Kila tunachotengeneza', svc_p:'Kutoka software hadi hardware ya ndani ya bodi, mahali pamoja.',
+ ab_eyebrow:'Kuhusu sisi', ab_h2:'Mtaalamu unayemwamini wa elektroniki Dodoma',
+ gal_eyebrow:'Ndani ya duka', gal_h2:'Karakana yetu', gal_p:'Gusa picha kuikuza.',
+ pr_eyebrow:'Bei', pr_h2:'Bei wazi na nafuu', pr_p:'Bei za kuanzia. Gharama ya mwisho hutegemea kifaa na tatizo.',
+ te_eyebrow:'Maoni', te_h2:'Wateja wanasemaje', te_p:'Maoni kutoka kwa wateja Dodoma na Tanzania nzima.',
+ co_eyebrow:'Mawasiliano', co_h2:'Wasiliana nasi', co_p:'Uko tayari kutengeneza kifaa chako? Tufikie kwa njia yoyote.'
+};
+let lang=store.get('boaz-lang')||'en';
+const i18n=$$('[data-i18n]'); i18n.forEach(e=>e.dataset.en=e.innerHTML);
+function applyLang(){
+  i18n.forEach(e=>{const k=e.dataset.i18n;e.innerHTML=(lang==='sw'&&SW[k])?SW[k]:e.dataset.en});
+  $('#langBtn').textContent=lang==='sw'?'SW':'EN'; root.lang=lang; updateOpen();
+}
+$('#langBtn').onclick=()=>{lang=lang==='en'?'sw':'en';store.set('boaz-lang',lang);applyLang()};
+
+/* open status (Dodoma time) */
+function updateOpen(){
+  const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Dar_es_Salaam',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date());
+  const day=p.find(x=>x.type==='weekday').value, h=+p.find(x=>x.type==='hour').value%24;
+  const open=day!=='Sun'&&h>=8&&h<19;
+  $('#openDot').className='dot '+(open?'open':'closed');
+  $('#openText').textContent=open?(lang==='sw'?'Tumefungua sasa':'Open now · Dodoma'):(lang==='sw'?'Tumefungwa · Jumatatu–Jumamosi 8AM–7PM':'Closed · Mon–Sat 8AM–7PM');
+}
+setInterval(updateOpen,60000);
+applyLang();
+
+/* mobile nav */
+const nav=$('#nav'), burger=$('#burger');
+const setNav=o=>{nav.classList.toggle('open',o);burger.innerHTML=`<svg class="i"><use href="#i-${o?'x':'menu'}"/></svg>`};
+burger.onclick=()=>setNav(!nav.classList.contains('open'));
+$$('#nav a').forEach(a=>a.addEventListener('click',()=>setNav(false)));
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!burger.contains(e.target))setNav(false)});
+
+/* scroll */
+const bar=$('#progress'), toTop=$('#toTop');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  toTop.classList.toggle('show',h.scrollTop>600);
+},{passive:true});
+toTop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+/* reveal + counters */
+const ro=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.1});
+$$('.reveal').forEach(e=>ro.observe(e));
+function countUp(el){
+  const t=+el.dataset.count, suf=el.dataset.suffix||'', small=$('small',el);
+  const start=performance.now(), dur=1600;
+  (function tick(n){
+    const p=Math.min((n-start)/dur,1), v=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString()+suf;
+    el.firstChild.textContent=v;
+    if(p<1)requestAnimationFrame(tick);
+  })(start);
+}
+const co=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);o.unobserve(e.target)}}),{threshold:.6});
+$$('[data-count]').forEach(e=>co.observe(e));
+
+/* hero finder */
+const fin=$('#finderInput');
+$$('#quick button').forEach(b=>b.onclick=()=>{fin.value=b.textContent+' ';fin.focus()});
+$('#finder').addEventListener('submit',e=>{
+  e.preventDefault();
+  const d=fin.value.trim();
+  window.open(waLink(d?`Hello Boaz Electronics, I need a free estimate for my device: ${d}`:'Hello Boaz Electronics, I need a free estimate for my device.'),'_blank','noopener');
+});
+$$('.dev').forEach(b=>b.onclick=()=>window.open(waLink(`Hello Boaz Electronics, I need help with my ${b.dataset.dev}.`),'_blank','noopener'));
+
+/* service filter */
+$$('#tabs .tab').forEach(t=>t.onclick=()=>{
+  $$('#tabs .tab').forEach(x=>x.classList.remove('active')); t.classList.add('active');
+  $$('#svcGrid .card').forEach(c=>c.classList.toggle('hide',t.dataset.f!=='all'&&c.dataset.cat!==t.dataset.f));
+});
+
+/* faq */
+$$('.faq-item').forEach(it=>{
+  const a=$('.faq-a',it);
+  $('.faq-q',it).onclick=()=>{
+    const was=it.classList.contains('open');
+    $$('.faq-item.open').forEach(o=>{o.classList.remove('open');$('.faq-a',o).style.maxHeight=0});
+    if(!was){it.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  };
+});
+
+/* lightbox */
+const gal=$$('.gal'), lb=$('#lightbox'); let cur=0;
+function show(i){cur=(i+gal.length)%gal.length;const im=$('img',gal[cur]);$('#lbImg').src=im.src;$('#lbImg').alt=im.alt;$('#lbCap').textContent=$('figcaption',gal[cur]).textContent}
+gal.forEach((g,i)=>g.onclick=()=>{show(i);lb.classList.add('open')});
+$('#lbClose').onclick=()=>lb.classList.remove('open');
+$('#lbPrev').onclick=()=>show(cur-1);
+$('#lbNext').onclick=()=>show(cur+1);
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')lb.classList.remove('open');
+  if(e.key==='ArrowLeft')show(cur-1);
+  if(e.key==='ArrowRight')show(cur+1);
+});
+
+/* copy phone */
+$('#copyBtn').onclick=async()=>{try{await navigator.clipboard.writeText('+255765478390');say('Phone number copied')}catch(e){say('+255 765 478 390')}};
+
+/* contact form */
+const form=$('#contactForm');
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  let ok=true;
+  const chk=(el,v)=>{el.closest('.fg').classList.toggle('invalid',!v);if(!v)ok=false};
+  chk($('#fName'),$('#fName').value.trim().length>1);
+  chk($('#fPhone'),/^[+\d][\d\s-]{6,}$/.test($('#fPhone').value.trim()));
+  chk($('#fService'),!!$('#fService').value);
+  if(!ok){say('Please fix the highlighted fields');return}
+  const dev=$('#fDevice').value.trim(), msg=$('#fMsg').value.trim();
+  const text=['Hello Boaz Electronics!','','*Name:* '+$('#fName').value.trim(),'*Phone:* '+$('#fPhone').value.trim(),dev?'*Device:* '+dev:null,'*Service:* '+$('#fService').value,msg?'*Problem:* '+msg:null].filter(x=>x!==null).join('\n');
+  say('Opening WhatsApp…');
+  setTimeout(()=>{window.open(waLink(text),'_blank','noopener');form.reset()},600);
+});
+$$('#contactForm input,#contactForm select').forEach(el=>el.addEventListener('input',()=>el.closest('.fg').classList.remove('invalid')));
+</script>
 </body>
 </html>
