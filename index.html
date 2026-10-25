@@ -1,336 +1,335 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boaz Electronics Solutions | Phone Repair & Electronics in Dodoma</title>
-<meta name="description" content="Boaz Electronics Solutions - professional phone repair, software unlocking, micro-soldering, computer repair and spare parts in Dodoma, Tanzania.">
-<meta name="theme-color" content="#0b0f1a">
+<meta name="description" content="Boaz Electronics Solutions - phone repair, software unlocking, micro-soldering, computer repair and spare parts in Dodoma, Tanzania. Free diagnosis.">
 <meta property="og:title" content="Boaz Electronics Solutions - All Cracked">
-<meta property="og:description" content="Phone repair, FRP unlock, micro-soldering and electronics solutions in Dodoma.">
+<meta property="og:description" content="Never take broken for an answer. Free diagnosis, fast repairs and warranty in Dodoma.">
 <meta property="og:image" content="banner.jpg">
-<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f2a44">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Boaz Electronics Solutions","telephone":"+255765478390","email":"boazshyndika@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Dodoma","addressCountry":"TZ"},"openingHours":"Mo-Sa 08:00-19:00","image":"banner.jpg"}
 </script>
 <style>
 :root{
-  --brand:#f08a12; --brand2:#ffb347; --brand-rgb:240,138,18;
-  --bg:#0b0f1a; --bg2:#101627;
-  --text:#eef1f8; --muted:#9aa4bb;
-  --glass:rgba(255,255,255,.06); --glass-strong:rgba(255,255,255,.10);
-  --border:rgba(255,255,255,.12);
-  --shadow:0 20px 60px rgba(0,0,0,.45);
-  --wa:#25d366;
-  --radius:22px;
-  --grad:linear-gradient(135deg,var(--brand),var(--brand2));
+  --brand:#e87f0e; --brand-dark:#c96d0a; --brand-soft:#fff3e4;
+  --navy:#0f2a44; --navy2:#16385a;
+  --bg:#ffffff; --surface:#f5f7fa; --card:#ffffff;
+  --text:#14181f; --muted:#5b6574; --border:#e3e7ed;
+  --wa:#25d366; --radius:14px;
+  --shadow:0 1px 2px rgba(15,30,50,.06),0 8px 24px rgba(15,30,50,.07);
+  --shadow-lg:0 2px 4px rgba(15,30,50,.06),0 20px 50px rgba(15,30,50,.14);
 }
-[data-theme="light"]{
-  --bg:#f3f5fa; --bg2:#e9edf5;
-  --text:#121829; --muted:#566079;
-  --glass:rgba(255,255,255,.65); --glass-strong:rgba(255,255,255,.85);
-  --border:rgba(20,30,60,.10);
-  --shadow:0 20px 50px rgba(30,40,80,.12);
+[data-theme="dark"]{
+  --bg:#0c1118; --surface:#121a24; --card:#161f2b;
+  --text:#eef2f7; --muted:#9aa6b6; --border:#243142; --brand-soft:#2a1d0c;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  --shadow-lg:0 2px 4px rgba(0,0,0,.4),0 20px 50px rgba(0,0,0,.5);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;transition:background .4s,color .4s}
-h1,h2,h3,h4{font-family:'Space Grotesk','Inter',sans-serif;line-height:1.15}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em;font-weight:800}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 img{max-width:100%;display:block}
 button{font-family:inherit;cursor:pointer}
-.container{max-width:1180px;margin:0 auto;padding:0 22px}
-.i{width:1.25em;height:1.25em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.container{max-width:1200px;margin:0 auto;padding:0 22px}
+.i{width:1.25em;height:1.25em;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .i.fill{fill:currentColor;stroke:none}
-.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+section{padding:90px 0}
+.alt{background:var(--surface)}
+.sec-head{max-width:680px;margin:0 auto 48px;text-align:center}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:12px}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+.eyebrow{display:inline-block;color:var(--brand);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
 
-/* background mesh */
-.mesh{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--bg)}
-.mesh span{position:absolute;border-radius:50%;filter:blur(110px);opacity:.35;animation:drift 22s ease-in-out infinite alternate}
-.mesh span:nth-child(1){width:560px;height:560px;background:var(--brand);top:-160px;right:-120px}
-.mesh span:nth-child(2){width:480px;height:480px;background:#2a5bd7;bottom:-140px;left:-120px;animation-delay:-8s}
-.mesh span:nth-child(3){width:360px;height:360px;background:#00b8a9;top:45%;left:40%;opacity:.15;animation-delay:-14s}
-[data-theme="light"] .mesh span{opacity:.22}
-@keyframes drift{to{transform:translate(60px,40px) scale(1.15)}}
-
-/* glass */
-.glass{background:var(--glass);border:1px solid var(--border);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border-radius:var(--radius);box-shadow:var(--shadow)}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 26px;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid transparent;transition:transform .25s,box-shadow .25s,background .25s;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 26px;border-radius:10px;font-weight:700;font-size:.95rem;border:2px solid transparent;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--grad);color:#1a1200;box-shadow:0 10px 30px rgba(var(--brand-rgb),.35)}
-.btn-primary:hover{box-shadow:0 14px 38px rgba(var(--brand-rgb),.5)}
-.btn-glass{background:var(--glass);border-color:var(--border);color:var(--text);backdrop-filter:blur(12px)}
-.btn-glass:hover{background:var(--glass-strong)}
-.btn-wa{background:var(--wa);color:#04210f;box-shadow:0 10px 30px rgba(37,211,102,.3)}
-.btn-sm{padding:9px 18px;font-size:.85rem}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-dark);box-shadow:0 8px 20px rgba(232,127,14,.35)}
+.btn-wa{background:var(--wa);color:#05230f}
+.btn-outline{border-color:var(--border);color:var(--text);background:var(--card)}
+.btn-outline:hover{border-color:var(--brand);color:var(--brand)}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-sm{padding:9px 16px;font-size:.85rem}
 
-/* progress */
-#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:2000}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--brand);z-index:3000}
 
-/* nav */
-.nav{position:fixed;top:14px;left:0;right:0;z-index:1000}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 14px 10px 22px;border-radius:999px}
-.brand{display:flex;align-items:center;gap:11px;font-family:'Space Grotesk';font-weight:700;letter-spacing:.3px}
-.brand-mark{width:38px;height:38px;border-radius:12px;background:var(--grad);display:grid;place-items:center;color:#1a1200}
-.brand small{display:block;font-family:'Inter';font-size:.62rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
-.nav-links{display:flex;gap:4px}
-.nav-links a{padding:8px 14px;border-radius:999px;font-size:.9rem;font-weight:500;color:var(--muted);transition:.2s}
-.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--glass-strong)}
-.nav-actions{display:flex;align-items:center;gap:8px}
-.icon-btn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--glass);border:1px solid var(--border);color:var(--text);transition:.2s;font-size:.78rem;font-weight:700}
-.icon-btn:hover{background:var(--glass-strong);transform:translateY(-2px)}
+/* promo bar */
+.promo{background:var(--navy);color:#dbe6f2;font-size:.82rem;font-weight:500}
+.promo .container{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px}
+.promo b{color:#fff}
+.promo .status{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:#8aa}
+.dot.open{background:var(--wa);animation:ping 2s infinite}
+.dot.closed{background:#ef5350}
+@keyframes ping{70%{box-shadow:0 0 0 8px rgba(37,211,102,0)}0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}}
+
+/* header */
+header.site{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+[data-theme="dark"] header.site{background:rgba(12,17,24,.92)}
+.hdr{display:flex;align-items:center;gap:26px;height:70px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center}
+.brand small{display:block;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:2px;margin-right:auto}
+.nav>li{position:relative}
+.nav>li>a,.nav>li>button{display:flex;align-items:center;gap:5px;padding:10px 14px;border-radius:8px;font-weight:600;font-size:.93rem;background:none;border:0;color:var(--text)}
+.nav>li>a:hover,.nav>li>button:hover,.nav>li>a.active{background:var(--surface);color:var(--brand)}
+.nav .i{width:1em;height:1em}
+.menu{position:absolute;top:100%;left:0;width:340px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}
+.has-menu:hover .menu,.has-menu:focus-within .menu{opacity:1;visibility:visible;transform:none}
+.menu a{display:block;padding:12px 14px;border-radius:10px}
+.menu a:hover{background:var(--surface)}
+.menu b{display:block;font-size:.93rem}
+.menu span{font-size:.82rem;color:var(--muted)}
+.hdr-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--border);color:var(--text);font-size:.75rem;font-weight:800;transition:.2s}
+.icon-btn:hover{border-color:var(--brand);color:var(--brand)}
 #themeBtn .moon{display:none}
-[data-theme="light"] #themeBtn .sun{display:none}
-[data-theme="light"] #themeBtn .moon{display:block}
+[data-theme="dark"] #themeBtn .sun{display:none}
+[data-theme="dark"] #themeBtn .moon{display:block}
 .burger{display:none}
 
 /* hero */
-.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 70px;position:relative}
-.hero-bgimg{position:absolute;inset:0;z-index:-1;opacity:.12;background:url('banner.jpg') center/cover;mask-image:linear-gradient(#000 40%,transparent)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;font-size:.82rem;font-weight:600;margin-bottom:22px}
-.dot{width:9px;height:9px;border-radius:50%;background:#9aa4bb}
-.dot.open{background:var(--wa);box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:ping 2s infinite}
-.dot.closed{background:#ef5350}
-@keyframes ping{70%{box-shadow:0 0 0 10px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-.hero h1{font-size:clamp(2.4rem,5.4vw,4.1rem);font-weight:700;margin-bottom:20px;letter-spacing:-.02em}
-.hero p.lead{font-size:1.12rem;color:var(--muted);max-width:540px;margin-bottom:32px}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
-.hero-stats{display:flex;gap:14px;flex-wrap:wrap}
-.hstat{padding:16px 22px;min-width:120px}
-.hstat b{display:block;font-family:'Space Grotesk';font-size:1.8rem}
-.hstat span{font-size:.8rem;color:var(--muted)}
-.hero-visual{position:relative;max-width:470px;margin-left:auto}
-.hero-photo{border-radius:30px;padding:10px}
-.hero-photo img{border-radius:22px;width:100%;aspect-ratio:4/5;object-fit:cover;background:linear-gradient(135deg,var(--bg2),var(--glass-strong))}
-.float-card{position:absolute;padding:12px 16px;display:flex;align-items:center;gap:12px;border-radius:18px;animation:bob 4s ease-in-out infinite}
-.float-card.a{top:26px;right:-26px}
-.float-card.b{bottom:30px;left:-30px;animation-delay:-2s}
-.float-card .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center}
-.float-card small{display:block;font-size:.7rem;color:var(--muted)}
-.float-card strong{font-size:.88rem}
-@keyframes bob{50%{transform:translateY(-10px)}}
+.hero{position:relative;color:#fff;padding:110px 0 190px;background:var(--navy) url('banner.jpg') center/cover;text-align:center;isolation:isolate}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,42,68,.88),rgba(15,42,68,.78) 60%,rgba(15,42,68,.95));z-index:-1}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:900px;margin:0 auto 18px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p.lead{font-size:1.2rem;color:#cbd9e8;max-width:640px;margin:0 auto 34px}
+.finder{max-width:700px;margin:0 auto;display:flex;background:#fff;border-radius:14px;padding:7px;box-shadow:var(--shadow-lg)}
+.finder .i{align-self:center;margin:0 10px 0 14px;color:#8794a6}
+.finder input{flex:1;border:0;outline:0;font:inherit;font-size:1rem;color:#14181f;background:none;min-width:0}
+.finder .btn{padding:12px 24px}
+.quick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.quick button{padding:7px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;font-size:.84rem;font-weight:600;transition:.2s}
+.quick button:hover{background:var(--brand);border-color:var(--brand)}
 
-/* marquee */
-.marquee{padding:22px 0;overflow:hidden;border-block:1px solid var(--border);background:var(--glass);backdrop-filter:blur(10px)}
-.track{display:flex;gap:56px;width:max-content;animation:scroll 32s linear infinite}
-.marquee:hover .track{animation-play-state:paused}
-.track span{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:600;font-size:1.15rem;color:var(--muted);white-space:nowrap}
-@keyframes scroll{to{transform:translateX(-50%)}}
+/* tiles overlap */
+.tiles{margin-top:-120px;position:relative;z-index:2;padding:0 0 20px}
+.tiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tile{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-lg);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--border)}
+.tile-img{height:150px;background:var(--navy2) center/cover;position:relative}
+.tile-img::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(15,42,68,.75))}
+.tile-img .i{position:absolute;z-index:1;left:22px;bottom:16px;width:2rem;height:2rem;color:#fff}
+.tile-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.tile .num{font-size:2.3rem;font-weight:800;color:var(--brand);line-height:1}
+.tile .num small{display:block;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.tile h3{font-size:1.2rem;margin:16px 0 8px}
+.tile p{color:var(--muted);font-size:.94rem;flex:1}
+.tile .link{margin-top:16px}
+.link{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:var(--brand);font-size:.92rem;transition:gap .2s}
+.link:hover{gap:12px}
 
-/* sections */
-section{padding:100px 0}
-.sec-head{text-align:center;max-width:640px;margin:0 auto 54px}
-.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
-.sec-head h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:14px;letter-spacing:-.015em}
-.sec-head p{color:var(--muted)}
+/* device grid */
+.dev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.dev{display:flex;align-items:center;gap:14px;padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);font-weight:700;transition:.2s;text-align:left;color:var(--text)}
+.dev:hover{border-color:var(--brand);box-shadow:var(--shadow);transform:translateY(-3px)}
+.dev .ic{width:46px;height:46px;border-radius:12px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-size:1.3rem}
+.dev small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
 
 /* services */
-.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:34px}
-.chip{padding:9px 20px;border-radius:999px;border:1px solid var(--border);background:var(--glass);color:var(--muted);font-weight:600;font-size:.88rem;transition:.2s}
-.chip.active,.chip:hover{background:var(--grad);color:#1a1200;border-color:transparent}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{padding:32px 28px;transition:transform .35s,border-color .35s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-8px);border-color:rgba(var(--brand-rgb),.45)}
-.card::after{content:'';position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(var(--brand-rgb),.14),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
-.card:hover::after{opacity:1}
-.ico{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:rgba(var(--brand-rgb),.14);color:var(--brand);margin-bottom:22px;font-size:1.5rem}
-.card h3{font-size:1.2rem;margin-bottom:10px}
-.card p{color:var(--muted);font-size:.94rem}
-.link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--brand);font-weight:600;font-size:.9rem;transition:gap .25s}
-.card:hover .link{gap:13px}
+.svc-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.tab{padding:9px 20px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-weight:600;font-size:.88rem;color:var(--muted);transition:.2s}
+.tab.active,.tab:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+[data-theme="dark"] .tab.active,[data-theme="dark"] .tab:hover{background:var(--brand);border-color:var(--brand)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:.25s;position:relative}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-5px);border-color:transparent}
 .card.hide{display:none}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;margin-bottom:18px;font-size:1.4rem}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.93rem}
+.card .link{margin-top:16px}
 
-/* about */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.about-visual{position:relative}
-.about-visual .frame{padding:10px;border-radius:28px}
-.about-visual img{border-radius:20px;width:100%;height:480px;object-fit:cover;background:var(--glass-strong)}
-.about-badge{position:absolute;padding:16px 22px;text-align:center;border-radius:18px}
-.about-badge.a{bottom:-24px;right:-18px}
-.about-badge.b{top:-18px;left:-18px}
-.about-badge b{display:block;font-family:'Space Grotesk';font-size:2rem}
-.about-badge span{font-size:.78rem;color:var(--muted)}
-.about-content h2{font-size:clamp(2rem,3.6vw,2.7rem);margin-bottom:18px}
-.about-content>p{color:var(--muted);margin-bottom:28px}
-.feat{display:flex;gap:16px;margin-bottom:20px}
-.feat .ico{width:48px;height:48px;margin:0;font-size:1.2rem;border-radius:14px}
-.feat h4{margin-bottom:3px}
-.feat p{color:var(--muted);font-size:.9rem}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding:28px 24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:22px;width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;display:grid;place-items:center}
+.step h4{font-size:1.05rem;margin:6px 0 8px}
+.step p{color:var(--muted);font-size:.92rem}
 
-/* counters */
-.counters{padding:30px 0 90px}
-.count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.count{padding:30px 20px;text-align:center}
-.count .ico{margin:0 auto 14px}
-.count b{display:block;font-family:'Space Grotesk';font-size:2.6rem}
-.count span{color:var(--muted);font-size:.9rem}
-
-/* gallery */
-.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.gal{position:relative;border-radius:22px;overflow:hidden;height:290px;cursor:zoom-in;border:1px solid var(--border);background:var(--glass-strong)}
+/* about / gallery */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.split img.main{width:100%;height:460px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-lg);background:var(--surface)}
+.split h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:14px}
+.split>div>p{color:var(--muted);margin-bottom:22px}
+.checks li{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.checks .i{color:var(--brand);margin-top:3px}
+.checks b{display:block}
+.checks span{color:var(--muted);font-size:.9rem}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gal{position:relative;height:250px;border-radius:var(--radius);overflow:hidden;cursor:zoom-in;background:var(--surface);border:1px solid var(--border)}
 .gal.wide{grid-column:span 2}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.gal:hover img{transform:scale(1.08)}
-.gal figcaption{position:absolute;left:14px;right:14px;bottom:14px;padding:12px 16px;border-radius:16px;transform:translateY(20px);opacity:0;transition:.35s}
-.gal:hover figcaption{transform:none;opacity:1}
-.gal figcaption b{display:block;font-size:.95rem}
-.gal figcaption span{font-size:.78rem;color:var(--muted)}
-.lightbox{position:fixed;inset:0;z-index:3000;background:rgba(5,8,16,.88);backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;padding:30px}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal:hover img{transform:scale(1.07)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;color:#fff;background:linear-gradient(transparent,rgba(10,20,35,.85));font-weight:700;font-size:.92rem}
+.lightbox{position:fixed;inset:0;z-index:4000;background:rgba(8,14,24,.92);display:none;align-items:center;justify-content:center;padding:30px}
 .lightbox.open{display:flex}
-.lightbox img{max-height:82vh;max-width:92vw;border-radius:18px;box-shadow:var(--shadow)}
-.lb-btn{position:absolute;color:#fff}
-.lb-close{top:22px;right:22px}.lb-prev{left:22px;top:50%}.lb-next{right:22px;top:50%}
-.lb-cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:#dfe5f5;font-size:.9rem}
-
-/* why */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.why-img{padding:10px;border-radius:28px}
-.why-img img{border-radius:20px;width:100%;height:520px;object-fit:cover;background:var(--glass-strong)}
-.why-list{display:grid;gap:14px;margin-top:26px}
-.why-item{display:flex;gap:16px;align-items:center;padding:16px 20px;border-radius:18px;transition:transform .25s}
-.why-item:hover{transform:translateX(6px)}
-.why-item .ico{width:46px;height:46px;margin:0;font-size:1.15rem;border-radius:14px}
-.why-item h4{font-size:1rem}
-.why-item p{font-size:.85rem;color:var(--muted)}
+.lightbox img{max-height:82vh;max-width:92vw;border-radius:12px}
+.lb{position:absolute;background:rgba(255,255,255,.12);border-color:transparent;color:#fff}
+.lb-close{top:20px;right:20px}.lb-prev{left:20px;top:50%}.lb-next{right:20px;top:50%}
+.lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#dfe6f2;font-size:.9rem}
 
 /* pricing */
-.price-card{padding:38px 30px;position:relative;display:flex;flex-direction:column}
-.price-card.featured{border-color:rgba(var(--brand-rgb),.6);transform:scale(1.04);background:linear-gradient(180deg,rgba(var(--brand-rgb),.12),var(--glass))}
-.price-card .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);color:#1a1200;font-size:.75rem;font-weight:700;padding:6px 16px;border-radius:999px;display:flex;gap:6px;align-items:center}
-.price-top{text-align:center;padding-bottom:24px;border-bottom:1px solid var(--border);margin-bottom:22px}
-.price-top .ico{margin:0 auto 14px}
-.price-top h3{font-size:1.25rem}
-.price-top small{color:var(--muted)}
-.amount{margin-top:14px;font-family:'Space Grotesk';font-size:2.7rem;font-weight:700}
-.amount sup{font-size:1rem;color:var(--brand);margin-right:4px}
-.amount em{font-style:normal;font-size:.82rem;font-family:'Inter';color:var(--muted);font-weight:400;margin-left:4px}
-.price-card li{display:flex;gap:11px;align-items:center;padding:8px 0;color:var(--muted);font-size:.93rem}
-.price-card li .i{color:var(--brand)}
-.price-card ul{flex:1;margin-bottom:26px}
-.note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:26px}
+.price{display:flex;flex-direction:column;padding:34px 28px}
+.price.featured{border:2px solid var(--brand);position:relative;box-shadow:var(--shadow-lg)}
+.price .tag{position:absolute;top:-13px;left:24px;background:var(--brand);color:#fff;font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
+.price .amt{font-size:2.8rem;font-weight:800;margin:10px 0 4px}
+.price .amt small{font-size:.9rem;font-weight:600;color:var(--muted)}
+.price .sub{color:var(--muted);font-size:.9rem;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.price ul{flex:1;margin-bottom:24px}
+.price li{display:flex;gap:10px;align-items:center;padding:7px 0;font-size:.93rem}
+.price li .i{color:var(--brand)}
+.note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:24px}
+
+/* tips */
+.tip{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.tip-top{height:8px;background:var(--brand)}
+.tip-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.tag-s{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:10px}
+.tip h3{font-size:1.1rem;margin-bottom:8px}
+.tip p{color:var(--muted);font-size:.92rem}
+.tips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 
 /* testimonials */
-.testi{padding:30px}
-.stars{display:flex;gap:3px;color:var(--brand);margin-bottom:16px}
+.stars{display:flex;gap:3px;color:var(--brand);margin-bottom:14px}
 .stars .i{fill:currentColor;width:1.05em;height:1.05em}
-.testi p{color:var(--muted);margin-bottom:22px;font-size:.97rem}
-.who{display:flex;gap:13px;align-items:center}
-.avatar{width:46px;height:46px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#1a1200;font-weight:700}
+.testi p{color:var(--muted);margin-bottom:20px;font-size:.96rem}
+.who{display:flex;gap:12px;align-items:center}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center;font-size:.9rem}
 .who span{display:block;font-size:.8rem;color:var(--muted)}
 
 /* faq */
 .faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
-.faq-item{border-radius:18px;overflow:hidden}
-.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;background:none;border:0;color:var(--text);font-size:1rem;font-weight:600;text-align:left}
-.faq-q .i{transition:transform .3s;color:var(--brand)}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 24px;background:none;border:0;color:var(--text);font-size:1rem;font-weight:700;text-align:left}
+.faq-q .i{color:var(--brand);transition:transform .3s}
 .faq-item.open .faq-q .i{transform:rotate(180deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s}
 .faq-a p{padding:0 24px 22px;color:var(--muted);font-size:.94rem}
 
-/* contact */
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px}
-.c-card{display:flex;gap:16px;align-items:center;padding:18px 22px;margin-bottom:14px;border-radius:18px}
-.c-card .ico{width:50px;height:50px;margin:0;font-size:1.2rem;border-radius:15px}
-.c-card small{display:block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
-.c-card strong{font-size:.98rem}
-.c-card .copy{margin-left:auto}
-.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.social{display:flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;font-size:.85rem;font-weight:500;transition:.25s}
-.social:hover{color:var(--brand);transform:translateY(-3px)}
-.form{padding:36px}
-.form h3{font-size:1.35rem;margin-bottom:22px;display:flex;gap:10px;align-items:center}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fg{display:flex;flex-direction:column;gap:7px}
-.fg.full{grid-column:1/-1}
-.fg label{font-size:.84rem;font-weight:600}
-.fg input,.fg select,.fg textarea{background:var(--glass);border:1px solid var(--border);color:var(--text);border-radius:14px;padding:13px 16px;font:inherit;font-size:.94rem;outline:none;transition:.2s}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(var(--brand-rgb),.15)}
-.fg select option{background:var(--bg2);color:var(--text)}
-.fg textarea{min-height:110px;resize:vertical}
-.fg .err{font-size:.75rem;color:#ef5350;min-height:0;display:none}
-.fg.invalid input,.fg.invalid select{border-color:#ef5350}
-.fg.invalid .err{display:block}
-.form .btn{width:100%;margin-top:20px}
-.map{margin-top:40px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
-.map iframe{width:100%;height:380px;border:0;display:block;filter:grayscale(.35) contrast(1.05)}
-[data-theme="dark"] .map iframe{filter:grayscale(.6) invert(.9) hue-rotate(180deg) contrast(.9)}
+/* join band */
+.band{background:var(--navy);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+.band::before{content:'';position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(232,127,14,.25);z-index:-1}
+.band::after{content:'';position:absolute;left:-60px;bottom:-100px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.06);z-index:-1}
+.band h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:10px}
+.band p{color:#cbd9e8;max-width:520px;margin:0 auto 26px}
 
-/* cta */
-.cta-box{padding:60px 40px;text-align:center;background:linear-gradient(135deg,rgba(var(--brand-rgb),.35),rgba(42,91,215,.25));position:relative;overflow:hidden}
-.cta-box h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:12px}
-.cta-box p{color:var(--muted);margin-bottom:28px;max-width:520px;margin-inline:auto}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px}
+.c-card{display:flex;gap:16px;align-items:center;padding:18px 20px;margin-bottom:14px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius)}
+.c-card .ico{margin:0;width:48px;height:48px}
+.c-card small{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.c-card strong{font-size:.97rem}
+.c-card .icon-btn{margin-left:auto}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.social{display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:.85rem;font-weight:600;transition:.2s}
+.social:hover{border-color:var(--brand);color:var(--brand)}
+.form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+.form h3{font-size:1.3rem;margin-bottom:20px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{display:flex;flex-direction:column;gap:6px}
+.fg.full{grid-column:1/-1}
+.fg label{font-size:.84rem;font-weight:700}
+.fg input,.fg select,.fg textarea{background:var(--bg);border:1.5px solid var(--border);color:var(--text);border-radius:10px;padding:12px 14px;font:inherit;font-size:.94rem;outline:none;transition:.2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(232,127,14,.15)}
+.fg textarea{min-height:100px;resize:vertical}
+.fg .err{display:none;font-size:.75rem;color:#e53935}
+.fg.invalid input,.fg.invalid select{border-color:#e53935}
+.fg.invalid .err{display:block}
+.form .btn{width:100%;margin-top:18px}
+.map{margin-top:34px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.map iframe{width:100%;height:380px;border:0;display:block}
+
+/* brands */
+.brands{padding:46px 0;border-top:1px solid var(--border)}
+.brands h4{text-align:center;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.brand-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 14px}
+.brand-row span{padding:9px 18px;border:1px solid var(--border);border-radius:999px;font-weight:700;font-size:.9rem;color:var(--muted);background:var(--card)}
 
 /* footer */
-footer{padding:70px 0 0;border-top:1px solid var(--border);background:var(--glass);backdrop-filter:blur(12px)}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:50px}
-.foot-grid p{color:var(--muted);font-size:.92rem;margin:16px 0 20px}
-.foot-grid h4{margin-bottom:18px;font-size:1rem;color:var(--brand)}
-.foot-grid li{margin-bottom:11px}
-.foot-grid li a{color:var(--muted);font-size:.92rem;transition:.2s}
-.foot-grid li a:hover{color:var(--brand);padding-left:4px}
+footer{background:var(--navy);color:#b6c5d6;padding:70px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:46px}
+footer .brand{color:#fff}
+footer .brand small{color:#8fa4bb}
+footer p{margin:16px 0 20px;font-size:.92rem}
+footer h4{color:#fff;margin-bottom:16px;font-size:.95rem}
+footer li{margin-bottom:10px}
+footer li a{font-size:.92rem;transition:.2s}
+footer li a:hover{color:var(--brand)}
 .foot-soc{display:flex;gap:10px}
-.foot-bottom{border-top:1px solid var(--border);padding:22px 0;text-align:center;color:var(--muted);font-size:.85rem}
+.foot-soc .icon-btn{background:rgba(255,255,255,.08);border-color:transparent;color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;text-align:center;font-size:.85rem}
 
 /* floating */
-.wa-float{position:fixed;left:24px;bottom:24px;z-index:900;display:flex;align-items:center;gap:10px}
-.wa-float a.round{width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#fff;box-shadow:0 8px 28px rgba(37,211,102,.45);animation:ping 2.4s infinite;font-size:1.7rem}
-.wa-label{padding:8px 15px;border-radius:12px;font-size:.8rem;font-weight:600}
-.to-top{position:fixed;right:24px;bottom:24px;z-index:900;opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s}
+.wa-float{position:fixed;left:22px;bottom:22px;z-index:900;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 8px 26px rgba(37,211,102,.45);animation:ping 2.4s infinite}
+.to-top{position:fixed;right:22px;bottom:22px;z-index:900;opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s;box-shadow:var(--shadow)}
 .to-top.show{opacity:1;visibility:visible;transform:none}
-.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);padding:12px 22px;border-radius:999px;font-size:.88rem;font-weight:600;opacity:0;pointer-events:none;transition:.35s;z-index:3500}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:var(--navy);color:#fff;padding:12px 22px;border-radius:999px;font-size:.88rem;font-weight:600;opacity:0;pointer-events:none;transition:.3s;z-index:5000}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-
-.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 
 @media (max-width:1000px){
-  .hero-grid,.about-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
-  .hero-visual{margin:20px auto 0}
-  .grid-3{grid-template-columns:repeat(2,1fr)}
-  .gal-grid{grid-template-columns:repeat(2,1fr)}.gal.wide{grid-column:span 2}
-  .count-grid{grid-template-columns:repeat(2,1fr)}
+  .tiles-grid,.grid-3{grid-template-columns:repeat(2,1fr)}
+  .dev-grid,.tips-grid,.steps{grid-template-columns:repeat(2,1fr)}
+  .split,.contact-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
   .foot-grid{grid-template-columns:1fr 1fr}
-  .price-card.featured{transform:none}
-  .about-visual{max-width:520px;margin:0 auto}
+  .steps{row-gap:34px}
 }
-@media (max-width:860px){
+@media (max-width:900px){
   .burger{display:grid}
-  .nav-cta{display:none}
-  .nav-links{position:fixed;top:82px;left:16px;right:16px;flex-direction:column;padding:16px;border-radius:24px;background:var(--glass-strong);border:1px solid var(--border);backdrop-filter:blur(24px);box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(-12px);transition:.3s}
-  .nav-links.open{opacity:1;visibility:visible;transform:none}
-  .nav-links a{padding:13px 16px}
+  .hdr-cta{display:none}
+  .nav{position:fixed;top:0;right:-100%;bottom:0;width:min(330px,88vw);background:var(--bg);flex-direction:column;padding:84px 18px 24px;gap:2px;box-shadow:var(--shadow-lg);transition:right .35s;overflow-y:auto;margin:0}
+  .nav.open{right:0}
+  .nav>li>a,.nav>li>button{width:100%;padding:13px 14px}
+  .has-menu>button .i{display:none}
+  .menu{position:static;width:100%;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 8px 10px;background:none}
+  .menu span{display:none}
+  .menu a{padding:9px 14px}
+  .burger{position:relative;z-index:1100}
+  .hdr-actions{margin-left:auto}
 }
 @media (max-width:640px){
-  section{padding:70px 0}
-  .grid-3,.gal-grid,.fgrid,.foot-grid{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .promo .hide-s{display:none}
+  .hero{padding:70px 0 160px}
+  .finder{flex-direction:column;gap:8px;padding:10px}
+  .finder .i{display:none}
+  .finder input{padding:10px 8px}
+  .tiles-grid,.grid-3,.dev-grid,.tips-grid,.steps,.gal-grid,.fgrid,.foot-grid{grid-template-columns:1fr}
   .gal.wide{grid-column:auto}
-  .float-card,.about-badge{display:none}
-  .wa-label{display:none}
-  .form{padding:24px}
-  .hero-stats .hstat{flex:1}
+  .form{padding:22px}
+  .band{padding:40px 22px}
   .brand small{display:none}
 }
 </style>
 </head>
 <body>
 
-<!-- ICON SPRITE -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-<defs>
+<!-- ICONS -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
 <symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18h.01"/></symbol>
+<symbol id="i-tablet" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M12 18h.01"/></symbol>
 <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2.5"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
 <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M19 9h3M19 14h3M2 9h3M2 14h3"/></symbol>
 <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5"/><path d="M22 11v2M6 11v2M10 11v2"/></symbol>
 <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M2 20h20"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+<symbol id="i-tv" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="m17 2-5 5-5-5"/></symbol>
+<symbol id="i-gamepad" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="6"/><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><path d="M12 6h.01"/></symbol>
+<symbol id="i-watch" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><path d="M12 9v3l1.5 1.5M16.5 17.7 16 22H8l-.5-4.3M7.5 6.3 8 2h8l.5 4.3"/></symbol>
 <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
 <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
 <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
@@ -353,218 +352,277 @@ footer{padding:70px 0 0;border-top:1px solid var(--border);background:var(--glas
 <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></symbol>
 <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
 <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
-<symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-11 11M22 2l-7 20-4-9-9-4z"/></symbol>
 <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
 <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
-<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
 <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
-<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
 <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
 <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
 <symbol id="i-yt" viewBox="0 0 24 24"><path d="M22.5 6.5a3 3 0 0 0-2.1-2.1C18.6 4 12 4 12 4s-6.6 0-8.4.4A3 3 0 0 0 1.5 6.5 31 31 0 0 0 1 12a31 31 0 0 0 .5 5.5 3 3 0 0 0 2.1 2.1C5.4 20 12 20 12 20s6.6 0 8.4-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23 12a31 31 0 0 0-.5-5.5z"/><path d="m10 15 5-3-5-3z"/></symbol>
 <symbol id="i-tt" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V3a5 5 0 0 0 5 5"/></symbol>
 <symbol id="i-wa" viewBox="0 0 32 32"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.124-1.958A15.9 15.9 0 0 0 16.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.342 22.616c-.392 1.106-1.942 2.024-3.194 2.292-.856.182-1.974.326-5.738-1.234-4.818-1.994-7.916-6.882-8.158-7.202-.232-.32-1.942-2.586-1.942-4.932s1.23-3.498 1.666-3.976c.436-.478.952-.598 1.268-.598.316 0 .632.002.908.016.292.016.682-.11 1.068.814.392.952 1.338 3.266 1.456 3.502.118.236.198.51.04.826-.158.316-.236.514-.474.79-.236.278-.498.62-.71.832-.238.236-.486.492-.208.966.276.474 1.23 2.028 2.642 3.286 1.816 1.618 3.348 2.122 3.822 2.358.474.236.752.198 1.028-.118.278-.316 1.184-1.382 1.5-1.858.316-.478.632-.394 1.068-.236.436.158 2.748 1.296 3.222 1.532.474.236.79.354.908.55.118.198.118 1.146-.274 2.252z"/></symbol>
-</defs>
-</svg>
+</defs></svg>
 
 <div id="progress"></div>
-<div class="mesh"><span></span><span></span><span></span></div>
 
-<!-- NAV -->
-<header class="nav">
+<!-- PROMO BAR -->
+<div class="promo">
   <div class="container">
-    <div class="nav-inner glass">
-      <a href="#home" class="brand">
-        <span class="brand-mark"><svg class="i"><use href="#i-cpu"/></svg></span>
-        <span>BOAZ ELECTRONICS<small>Solutions · All Cracked</small></span>
-      </a>
-      <nav class="nav-links" id="navLinks" aria-label="Main">
-        <a href="#home" data-i18n="nav_home">Home</a>
-        <a href="#services" data-i18n="nav_services">Services</a>
-        <a href="#about" data-i18n="nav_about">About</a>
-        <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
-        <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" data-i18n="nav_contact">Contact</a>
-      </nav>
-      <div class="nav-actions">
-        <button class="icon-btn" id="langBtn" aria-label="Switch language" title="English / Kiswahili">EN</button>
-        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
-          <svg class="i sun"><use href="#i-sun"/></svg><svg class="i moon"><use href="#i-moon"/></svg>
-        </button>
-        <a class="btn btn-wa btn-sm nav-cta" href="https://wa.me/255765478390" target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg>WhatsApp</a>
-        <button class="icon-btn burger" id="burger" aria-label="Menu"><svg class="i"><use href="#i-menu"/></svg></button>
-      </div>
+    <div><b>Free diagnosis</b> on every device<span class="hide-s"> · Warranty on all repairs</span></div>
+    <div class="status"><span class="dot" id="openDot"></span><span id="openText">Checking hours…</span></div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site">
+  <div class="container hdr">
+    <a href="#home" class="brand">
+      <span class="brand-mark"><svg class="i"><use href="#i-cpu"/></svg></span>
+      <span>BOAZ ELECTRONICS<small>Solutions · All Cracked</small></span>
+    </a>
+    <ul class="nav" id="nav">
+      <li class="has-menu">
+        <button type="button">Fix Your Device <svg class="i"><use href="#i-down"/></svg></button>
+        <div class="menu">
+          <a href="#devices"><b>Repair by Device</b><span>Phones, tablets, laptops, TVs and more.</span></a>
+          <a href="#services"><b>All Services</b><span>Screens, unlocking, micro-soldering, batteries.</span></a>
+          <a href="#how"><b>How It Works</b><span>From free diagnosis to warranty pickup.</span></a>
+          <a href="#tips"><b>Repair Tips</b><span>What to do before you bring it in.</span></a>
+        </div>
+      </li>
+      <li class="has-menu">
+        <button type="button">Shop &amp; Pricing <svg class="i"><use href="#i-down"/></svg></button>
+        <div class="menu">
+          <a href="#pricing"><b>Service Pricing</b><span>Transparent starting prices.</span></a>
+          <a href="https://wa.me/255765478390?text=I%20want%20to%20buy%20spare%20parts" target="_blank" rel="noopener"><b>Spare Parts</b><span>Screens, batteries, chargers, cases.</span></a>
+        </div>
+      </li>
+      <li class="has-menu">
+        <button type="button">Company <svg class="i"><use href="#i-down"/></svg></button>
+        <div class="menu">
+          <a href="#about"><b>About Boaz</b><span>8+ years fixing devices in Dodoma.</span></a>
+          <a href="#gallery"><b>Our Workshop</b><span>Inside the shop.</span></a>
+          <a href="#reviews"><b>Customer Reviews</b><span>What Dodoma says about us.</span></a>
+          <a href="#faq"><b>FAQ</b><span>Quick answers.</span></a>
+        </div>
+      </li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="hdr-actions">
+      <button class="icon-btn" id="langBtn" aria-label="Switch language" title="English / Kiswahili">EN</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><svg class="i sun"><use href="#i-sun"/></svg><svg class="i moon"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-wa btn-sm hdr-cta" href="https://wa.me/255765478390" target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg>WhatsApp</a>
+      <button class="icon-btn burger" id="burger" aria-label="Menu"><svg class="i"><use href="#i-menu"/></svg></button>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bgimg"></div>
-  <div class="container hero-grid">
-    <div class="reveal">
-      <div class="badge glass"><span class="dot" id="openDot"></span><span id="openText">Checking hours…</span></div>
-      <h1 data-i18n="hero_h1">Expert <span class="grad-text">Electronics</span> Repair &amp; <span class="grad-text">Solutions</span> in Dodoma</h1>
-      <p class="lead" data-i18n="hero_p">Phone repair, software unlocking, micro-soldering and computer services. We fix what others can't — all cracked, all solved.</p>
-      <div class="hero-cta">
-        <a class="btn btn-wa" href="https://wa.me/255765478390?text=Hello%20Boaz%20Electronics,%20I%20need%20help%20with%20my%20device." target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg><span data-i18n="cta_wa">Chat on WhatsApp</span></a>
-        <a class="btn btn-glass" href="tel:+255765478390"><svg class="i"><use href="#i-phone"/></svg><span data-i18n="cta_call">Call Now</span></a>
-        <a class="btn btn-glass" href="#services"><span data-i18n="cta_services">Our Services</span><svg class="i"><use href="#i-arrow"/></svg></a>
-      </div>
-      <div class="hero-stats">
-        <div class="hstat glass"><b class="grad-text" data-count="5000" data-suffix="+">0</b><span data-i18n="st_devices">Devices Repaired</span></div>
-        <div class="hstat glass"><b class="grad-text" data-count="3000" data-suffix="+">0</b><span data-i18n="st_cust">Happy Customers</span></div>
-        <div class="hstat glass"><b class="grad-text" data-count="8" data-suffix="+">0</b><span data-i18n="st_years">Years Experience</span></div>
-      </div>
-    </div>
-    <div class="hero-visual reveal">
-      <div class="hero-photo glass"><img src="boaz.jpg" alt="Boaz - electronics repair expert in Dodoma" onerror="this.style.visibility='hidden'"></div>
-      <div class="float-card glass a"><span class="ic" style="background:rgba(37,211,102,.18);color:#25d366"><svg class="i"><use href="#i-check-circle"/></svg></span><div><small>Repair Status</small><strong>Device Fixed!</strong></div></div>
-      <div class="float-card glass b"><span class="ic" style="background:rgba(var(--brand-rgb),.18);color:var(--brand)"><svg class="i"><use href="#i-star"/></svg></span><div><small>Customer Rating</small><strong>4.9 / 5</strong></div></div>
+<section class="hero" id="home" style="padding-bottom:190px">
+  <div class="container">
+    <h1 data-i18n="hero_h1">Never take <em>broken</em> for an answer</h1>
+    <p class="lead" data-i18n="hero_p">Phone repair, software unlocking, micro-soldering and computer services in Dodoma. We fix what others can't.</p>
+    <form class="finder" id="finder">
+      <svg class="i"><use href="#i-search"/></svg>
+      <input id="finderInput" type="text" placeholder="Search your device — e.g. Tecno Spark 10, iPhone 12, HP laptop" aria-label="Your device" autocomplete="off">
+      <button class="btn btn-primary" type="submit">Get Free Estimate</button>
+    </form>
+    <div class="quick" id="quick">
+      <button type="button">Samsung</button><button type="button">iPhone</button><button type="button">Tecno</button><button type="button">Infinix</button><button type="button">Xiaomi</button><button type="button">Laptop</button>
     </div>
   </div>
 </section>
 
-<!-- BRANDS -->
-<div class="marquee" aria-label="Brands we repair">
-  <div class="track" id="brandTrack"></div>
+<!-- TILES -->
+<div class="tiles">
+  <div class="container tiles-grid">
+    <article class="tile reveal">
+      <div class="tile-img" style="background-image:url('workshop1.jpg')"><svg class="i"><use href="#i-wrench"/></svg></div>
+      <div class="tile-body">
+        <div class="num" data-count="5000" data-suffix="+">0<small>Devices repaired</small></div>
+        <h3>Expert Phone &amp; Electronics Repair</h3>
+        <p>Screens, batteries, charging ports, and board-level repairs by a technician with a microscope.</p>
+        <a class="link" href="#services">See services <svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+    </article>
+    <article class="tile reveal">
+      <div class="tile-img" style="background-image:url('workshop2.jpg')"><svg class="i"><use href="#i-search"/></svg></div>
+      <div class="tile-body">
+        <div class="num" data-count="100" data-suffix="%">0<small>Free diagnosis</small></div>
+        <h3>Know the Cost Before We Start</h3>
+        <p>Bring your device, get a free diagnosis and a clear quote. No hidden fees, no surprises.</p>
+        <a class="link" href="#pricing">View pricing <svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+    </article>
+    <article class="tile reveal">
+      <div class="tile-img" style="background-image:url('boaz.jpg');background-position:center 25%"><svg class="i"><use href="#i-shield"/></svg></div>
+      <div class="tile-body">
+        <div class="num" data-count="3000" data-suffix="+">0<small>Happy customers</small></div>
+        <h3>Warranty on Every Repair</h3>
+        <p>We use quality parts and stand behind our work, so you can pick up your device with confidence.</p>
+        <a class="link" href="#reviews">Read reviews <svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+    </article>
+  </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
+<!-- DEVICES -->
+<section id="devices">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow" data-i18n="svc_eyebrow">What we do</span>
-      <h2 data-i18n="svc_h2">Our Services</h2>
-      <p data-i18n="svc_p">From software to board-level hardware, we handle it all under one roof.</p>
+      <span class="eyebrow">Repair by device</span>
+      <h2>We repair almost anything with a circuit board</h2>
+      <p>Pick your device type and message us. We'll reply with a free estimate.</p>
     </div>
-    <div class="filters reveal" id="filters">
-      <button class="chip active" data-f="all">All</button>
-      <button class="chip" data-f="phone">Phones</button>
-      <button class="chip" data-f="software">Software</button>
-      <button class="chip" data-f="computer">Computers</button>
-      <button class="chip" data-f="shop">Shop</button>
+    <div class="dev-grid">
+      <button class="dev reveal" data-dev="Phone"><span class="ic"><svg class="i"><use href="#i-smartphone"/></svg></span><span>Phone<small>Android &amp; iPhone</small></span></button>
+      <button class="dev reveal" data-dev="Tablet"><span class="ic"><svg class="i"><use href="#i-tablet"/></svg></span><span>Tablet<small>iPad &amp; Android</small></span></button>
+      <button class="dev reveal" data-dev="Laptop"><span class="ic"><svg class="i"><use href="#i-laptop"/></svg></span><span>Laptop<small>All major brands</small></span></button>
+      <button class="dev reveal" data-dev="Desktop PC"><span class="ic"><svg class="i"><use href="#i-monitor"/></svg></span><span>Desktop PC<small>Upgrades &amp; repair</small></span></button>
+      <button class="dev reveal" data-dev="Game console"><span class="ic"><svg class="i"><use href="#i-gamepad"/></svg></span><span>Game console<small>Controllers too</small></span></button>
+      <button class="dev reveal" data-dev="TV"><span class="ic"><svg class="i"><use href="#i-tv"/></svg></span><span>TV<small>Ask for a quote</small></span></button>
+      <button class="dev reveal" data-dev="Speaker / Audio"><span class="ic"><svg class="i"><use href="#i-speaker"/></svg></span><span>Speaker / Audio<small>Sound faults</small></span></button>
+      <button class="dev reveal" data-dev="Smartwatch"><span class="ic"><svg class="i"><use href="#i-watch"/></svg></span><span>Smartwatch<small>Battery &amp; screen</small></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="svc_eyebrow">Services</span>
+      <h2 data-i18n="svc_h2">Everything we fix</h2>
+      <p data-i18n="svc_p">From software to board-level hardware, handled under one roof.</p>
+    </div>
+    <div class="svc-tabs reveal" id="tabs">
+      <button class="tab active" data-f="all">All</button><button class="tab" data-f="phone">Phones</button><button class="tab" data-f="software">Software</button><button class="tab" data-f="computer">Computers</button><button class="tab" data-f="shop">Shop</button>
     </div>
     <div class="grid-3" id="svcGrid">
-      <article class="card glass reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-smartphone"/></svg></div><h3>Phone Screen Repair</h3><p>Cracked or broken screen? We replace LCD and OLED displays for all major brands with original and high-quality parts.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20screen%20repair%20service" target="_blank" rel="noopener">Book repair <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card glass reveal" data-cat="software"><div class="ico"><svg class="i"><use href="#i-unlock"/></svg></div><h3>Software Unlocking</h3><p>FRP bypass, pattern unlock, IMEI repair, network unlock and flashing using UMT Box, Miracle Box and more.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20software%20unlocking" target="_blank" rel="noopener">Get help <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card glass reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-micro"/></svg></div><h3>Micro Soldering</h3><p>Board-level repair including IC replacement, charge port repair, baseband repair and component-level fixes.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20micro%20soldering%20service" target="_blank" rel="noopener">Learn more <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card glass reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-battery"/></svg></div><h3>Battery Replacement</h3><p>Original battery replacement for phones, tablets and laptops. Restore power and performance.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20battery%20replacement" target="_blank" rel="noopener">Book now <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card glass reveal" data-cat="computer"><div class="ico"><svg class="i"><use href="#i-laptop"/></svg></div><h3>Computer Repair</h3><p>Laptop and desktop repair: OS installation, virus removal, hardware upgrades and data recovery.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20computer%20repair" target="_blank" rel="noopener">Get quote <svg class="i"><use href="#i-arrow"/></svg></a></article>
-      <article class="card glass reveal" data-cat="shop"><div class="ico"><svg class="i"><use href="#i-bag"/></svg></div><h3>Spare Parts &amp; Accessories</h3><p>Quality spare parts, screens, batteries, chargers and cases for all phone brands at the best prices.</p><a class="link" href="https://wa.me/255765478390?text=I%20want%20to%20buy%20spare%20parts" target="_blank" rel="noopener">Shop now <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-smartphone"/></svg></div><h3>Phone Screen Repair</h3><p>Cracked or broken screen? We replace LCD and OLED displays for all major brands with original and high-quality parts.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20screen%20repair%20service" target="_blank" rel="noopener">Book repair <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="software"><div class="ico"><svg class="i"><use href="#i-unlock"/></svg></div><h3>Software Unlocking</h3><p>FRP bypass, pattern unlock, IMEI repair, network unlock and flashing using UMT Box, Miracle Box and more.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20software%20unlocking" target="_blank" rel="noopener">Get help <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-micro"/></svg></div><h3>Micro Soldering</h3><p>Board-level repair: IC replacement, charge port, baseband and component-level fixes.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20micro%20soldering%20service" target="_blank" rel="noopener">Learn more <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="phone"><div class="ico"><svg class="i"><use href="#i-battery"/></svg></div><h3>Battery Replacement</h3><p>Original battery replacement for phones, tablets and laptops. Restore power and performance.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20battery%20replacement" target="_blank" rel="noopener">Book now <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="computer"><div class="ico"><svg class="i"><use href="#i-laptop"/></svg></div><h3>Computer Repair</h3><p>Laptop and desktop repair: OS installation, virus removal, hardware upgrades and data recovery.</p><a class="link" href="https://wa.me/255765478390?text=I%20need%20computer%20repair" target="_blank" rel="noopener">Get quote <svg class="i"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" data-cat="shop"><div class="ico"><svg class="i"><use href="#i-bag"/></svg></div><h3>Spare Parts &amp; Accessories</h3><p>Quality spare parts, screens, batteries, chargers and cases for all phone brands at the best prices.</p><a class="link" href="https://wa.me/255765478390?text=I%20want%20to%20buy%20spare%20parts" target="_blank" rel="noopener">Shop now <svg class="i"><use href="#i-arrow"/></svg></a></article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Fixed in four simple steps</h2>
+      <p>Most software jobs take 15–30 minutes. Hardware is usually done the same day.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h4>Message or visit us</h4><p>Send photos on WhatsApp or walk in. Tell us what's wrong.</p></div>
+      <div class="step reveal"><h4>Free diagnosis</h4><p>We test the device and find the real fault, at no charge.</p></div>
+      <div class="step reveal"><h4>Approve the quote</h4><p>You get a clear price. We only start once you say yes.</p></div>
+      <div class="step reveal"><h4>Pick up with warranty</h4><p>Collect your repaired device with a service warranty.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="container about-grid">
-    <div class="about-visual reveal">
-      <div class="frame glass"><img src="workshop1.jpg" alt="Boaz Electronics workshop - micro soldering" loading="lazy" onerror="this.style.visibility='hidden'"></div>
-      <div class="about-badge glass a"><b class="grad-text">5000+</b><span>Devices Fixed</span></div>
-      <div class="about-badge glass b"><b class="grad-text">98%</b><span>Success Rate</span></div>
-    </div>
-    <div class="about-content reveal">
+<section id="about" class="alt">
+  <div class="container split">
+    <img class="main reveal" src="workshop1.jpg" alt="Boaz Electronics workshop - micro soldering" loading="lazy" onerror="this.style.visibility='hidden'">
+    <div class="reveal">
       <span class="eyebrow" data-i18n="ab_eyebrow">About us</span>
-      <h2 data-i18n="ab_h2">Your Trusted <span class="grad-text">Electronics Expert</span> in Dodoma</h2>
-      <p data-i18n="ab_p">For over 8 years we have served customers across Dodoma with advanced phone repair, software solutions and micro-soldering. Our motto is simple: “All Cracked” — we crack every problem, no matter how complex.</p>
-      <div class="feat"><div class="ico"><svg class="i"><use href="#i-micro"/></svg></div><div><h4>Advanced Equipment</h4><p>Professional microscopes, UMT Box, soldering stations and diagnostic tools.</p></div></div>
-      <div class="feat"><div class="ico"><svg class="i"><use href="#i-zap"/></svg></div><div><h4>Fast Turnaround</h4><p>Most repairs completed within 30 minutes to 24 hours.</p></div></div>
-      <div class="feat"><div class="ico"><svg class="i"><use href="#i-shield"/></svg></div><div><h4>Quality Guarantee</h4><p>Every repair comes with a warranty and quality parts.</p></div></div>
-      <div class="feat"><div class="ico"><svg class="i"><use href="#i-search"/></svg></div><div><h4>Fair Pricing</h4><p>Transparent pricing, no hidden costs. Free diagnosis on all devices.</p></div></div>
-      <a class="btn btn-primary" href="https://wa.me/255765478390?text=Hello%20Boaz,%20I'd%20like%20to%20know%20more%20about%20your%20services" target="_blank" rel="noopener" style="margin-top:10px">Contact us today <svg class="i"><use href="#i-arrow"/></svg></a>
+      <h2 data-i18n="ab_h2">Your trusted electronics expert in Dodoma</h2>
+      <p>For over 8 years Boaz Electronics Solutions has served customers across Dodoma. Our motto is simple: “All Cracked”, meaning we crack every problem, no matter how complex.</p>
+      <ul class="checks">
+        <li><svg class="i"><use href="#i-check-circle"/></svg><div><b>Professional equipment</b><span>Microscopes, UMT Box, Miracle Box, soldering stations.</span></div></li>
+        <li><svg class="i"><use href="#i-check-circle"/></svg><div><b>Fast turnaround</b><span>30 minutes to 24 hours for most repairs.</span></div></li>
+        <li><svg class="i"><use href="#i-check-circle"/></svg><div><b>We fix what others can't</b><span>Complex board-level repairs other shops refuse.</span></div></li>
+        <li><svg class="i"><use href="#i-check-circle"/></svg><div><b>Fair, transparent pricing</b><span>Free diagnosis and no hidden costs.</span></div></li>
+      </ul>
+      <a class="btn btn-primary" style="margin-top:10px" href="https://wa.me/255765478390?text=Hello%20Boaz,%20I'd%20like%20to%20know%20more%20about%20your%20services" target="_blank" rel="noopener">Talk to Boaz <svg class="i"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
-
-<!-- COUNTERS -->
-<div class="counters">
-  <div class="container count-grid">
-    <div class="count glass reveal"><div class="ico"><svg class="i"><use href="#i-smartphone"/></svg></div><b class="grad-text" data-count="5000" data-suffix="+">0</b><span>Devices Repaired</span></div>
-    <div class="count glass reveal"><div class="ico"><svg class="i"><use href="#i-users"/></svg></div><b class="grad-text" data-count="3000" data-suffix="+">0</b><span>Happy Customers</span></div>
-    <div class="count glass reveal"><div class="ico"><svg class="i"><use href="#i-award"/></svg></div><b class="grad-text" data-count="8" data-suffix="+">0</b><span>Years of Experience</span></div>
-    <div class="count glass reveal"><div class="ico"><svg class="i"><use href="#i-star"/></svg></div><b class="grad-text" data-count="98" data-suffix="%">0</b><span>Success Rate</span></div>
-  </div>
-</div>
 
 <!-- GALLERY -->
 <section id="gallery">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow" data-i18n="gal_eyebrow">Inside the shop</span>
-      <h2 data-i18n="gal_h2">Our Workshop</h2>
-      <p data-i18n="gal_p">A look inside our professional repair workshop in Dodoma. Tap any photo to enlarge.</p>
+      <h2 data-i18n="gal_h2">Our workshop</h2>
+      <p data-i18n="gal_p">Tap a photo to enlarge it.</p>
     </div>
     <div class="gal-grid">
-      <figure class="gal wide reveal" data-idx="0"><img src="banner.jpg" alt="Boaz Electronics Solutions banner" loading="lazy" onerror="this.style.visibility='hidden'"><figcaption class="glass"><b>Boaz Electronics Solutions</b><span>All Cracked — professional repair tools</span></figcaption></figure>
-      <figure class="gal reveal" data-idx="1"><img src="workshop2.jpg" alt="Micro soldering work" loading="lazy" onerror="this.style.visibility='hidden'"><figcaption class="glass"><b>Precision Micro Soldering</b><span>Board-level repair work</span></figcaption></figure>
-      <figure class="gal reveal" data-idx="2"><img src="workshop1.jpg" alt="Microscope diagnostics" loading="lazy" onerror="this.style.visibility='hidden'"><figcaption class="glass"><b>Microscope Diagnostics</b><span>Advanced component analysis</span></figcaption></figure>
-      <figure class="gal wide reveal" data-idx="3"><img src="boaz.jpg" alt="Boaz at work" loading="lazy" style="object-position:center 25%" onerror="this.style.visibility='hidden'"><figcaption class="glass"><b>Meet Boaz</b><span>Your trusted electronics expert</span></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section id="why">
-  <div class="container why-grid">
-    <div class="why-img glass reveal"><img src="workshop2.jpg" alt="Why choose Boaz Electronics" loading="lazy" onerror="this.style.visibility='hidden'"></div>
-    <div class="reveal">
-      <span class="eyebrow" data-i18n="why_eyebrow">Why us</span>
-      <h2 style="font-size:clamp(2rem,3.6vw,2.7rem)" data-i18n="why_h2">Why Choose <span class="grad-text">Boaz Electronics?</span></h2>
-      <p style="color:var(--muted);margin-top:14px">We're not just another repair shop. We bring expertise, precision and dedication to every device we touch.</p>
-      <div class="why-list">
-        <div class="why-item glass"><div class="ico"><svg class="i"><use href="#i-wrench"/></svg></div><div><h4>Professional Tools &amp; Equipment</h4><p>UMT Box, Miracle Box, microscopes and precision soldering stations</p></div></div>
-        <div class="why-item glass"><div class="ico"><svg class="i"><use href="#i-clock"/></svg></div><div><h4>Quick Service</h4><p>Most software repairs in 15–30 minutes, hardware the same day</p></div></div>
-        <div class="why-item glass"><div class="ico"><svg class="i"><use href="#i-shield"/></svg></div><div><h4>Warranty on All Repairs</h4><p>Every repair comes with a service warranty</p></div></div>
-        <div class="why-item glass"><div class="ico"><svg class="i"><use href="#i-sparkle"/></svg></div><div><h4>We Fix What Others Can't</h4><p>Complex board-level repairs other shops refuse</p></div></div>
-        <div class="why-item glass"><div class="ico"><svg class="i"><use href="#i-search"/></svg></div><div><h4>Free Diagnosis</h4><p>We diagnose for free before giving you a clear quote</p></div></div>
-      </div>
+      <figure class="gal wide reveal"><img src="banner.jpg" alt="Boaz Electronics Solutions banner" loading="lazy" onerror="this.style.visibility='hidden'"><figcaption>Boaz Electronics Solutions</figcaption></figure>
+      <figure class="gal reveal"><img src="workshop2.jpg" alt="Micro soldering work" loading="lazy" onerror="this.style.visibility='hidden'"><figcaption>Precision micro soldering</figcaption></figure>
+      <figure class="gal reveal"><img src="workshop1.jpg" alt="Microscope diagnostics" loading="lazy" onerror="this.style.visibility='hidden'"><figcaption>Microscope diagnostics</figcaption></figure>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing">
+<section id="pricing" class="alt">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow" data-i18n="pr_eyebrow">Pricing</span>
-      <h2 data-i18n="pr_h2">Service Pricing</h2>
-      <p data-i18n="pr_p">Transparent and affordable prices. Final cost depends on the device and fault.</p>
+      <h2 data-i18n="pr_h2">Clear, affordable pricing</h2>
+      <p data-i18n="pr_p">Starting prices. The final cost depends on your device and the fault.</p>
     </div>
     <div class="grid-3" style="align-items:stretch">
-      <div class="price-card glass reveal">
-        <div class="price-top"><div class="ico"><svg class="i"><use href="#i-unlock"/></svg></div><h3>Software Solutions</h3><small>Unlocking &amp; flashing</small><div class="amount"><sup>TSh</sup>10K<em>starting</em></div></div>
-        <ul><li><svg class="i"><use href="#i-check"/></svg>FRP / Google bypass</li><li><svg class="i"><use href="#i-check"/></svg>Pattern / PIN unlock</li><li><svg class="i"><use href="#i-check"/></svg>Phone flashing</li><li><svg class="i"><use href="#i-check"/></svg>IMEI repair</li><li><svg class="i"><use href="#i-check"/></svg>Network unlock</li><li><svg class="i"><use href="#i-check"/></svg>Free diagnosis</li></ul>
-        <a class="btn btn-glass" href="https://wa.me/255765478390?text=I%20need%20software%20unlocking%20service.%20Price?" target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg>Get quote</a>
+      <div class="card price reveal">
+        <div class="ico"><svg class="i"><use href="#i-unlock"/></svg></div><h3>Software Solutions</h3>
+        <div class="amt">TSh 10K<small> starting</small></div><div class="sub">Unlocking &amp; flashing</div>
+        <ul><li><svg class="i"><use href="#i-check"/></svg>FRP / Google bypass</li><li><svg class="i"><use href="#i-check"/></svg>Pattern / PIN unlock</li><li><svg class="i"><use href="#i-check"/></svg>Phone flashing</li><li><svg class="i"><use href="#i-check"/></svg>IMEI repair</li><li><svg class="i"><use href="#i-check"/></svg>Network unlock</li></ul>
+        <a class="btn btn-outline" href="https://wa.me/255765478390?text=I%20need%20software%20unlocking%20service.%20Price?" target="_blank" rel="noopener">Get quote</a>
       </div>
-      <div class="price-card featured glass reveal">
-        <div class="tag"><svg class="i fill" style="width:1em;height:1em"><use href="#i-star"/></svg>Most Popular</div>
-        <div class="price-top"><div class="ico"><svg class="i"><use href="#i-micro"/></svg></div><h3>Hardware Repair</h3><small>Screen, board &amp; component</small><div class="amount grad-text"><sup>TSh</sup>25K<em>starting</em></div></div>
-        <ul><li><svg class="i"><use href="#i-check"/></svg>Screen replacement</li><li><svg class="i"><use href="#i-check"/></svg>Battery replacement</li><li><svg class="i"><use href="#i-check"/></svg>Charging port repair</li><li><svg class="i"><use href="#i-check"/></svg>Micro soldering / IC</li><li><svg class="i"><use href="#i-check"/></svg>Speaker / mic repair</li><li><svg class="i"><use href="#i-check"/></svg>Warranty included</li></ul>
-        <a class="btn btn-primary" href="https://wa.me/255765478390?text=I%20need%20hardware%20repair%20service.%20Price?" target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg>Get quote</a>
+      <div class="card price featured reveal">
+        <span class="tag">Most popular</span>
+        <div class="ico"><svg class="i"><use href="#i-micro"/></svg></div><h3>Hardware Repair</h3>
+        <div class="amt">TSh 25K<small> starting</small></div><div class="sub">Screen, board &amp; component</div>
+        <ul><li><svg class="i"><use href="#i-check"/></svg>Screen replacement</li><li><svg class="i"><use href="#i-check"/></svg>Battery replacement</li><li><svg class="i"><use href="#i-check"/></svg>Charging port repair</li><li><svg class="i"><use href="#i-check"/></svg>Micro soldering / IC</li><li><svg class="i"><use href="#i-check"/></svg>Warranty included</li></ul>
+        <a class="btn btn-primary" href="https://wa.me/255765478390?text=I%20need%20hardware%20repair%20service.%20Price?" target="_blank" rel="noopener">Get quote</a>
       </div>
-      <div class="price-card glass reveal">
-        <div class="price-top"><div class="ico"><svg class="i"><use href="#i-laptop"/></svg></div><h3>Computer Services</h3><small>Laptop &amp; desktop repair</small><div class="amount"><sup>TSh</sup>15K<em>starting</em></div></div>
-        <ul><li><svg class="i"><use href="#i-check"/></svg>OS installation</li><li><svg class="i"><use href="#i-check"/></svg>Virus removal</li><li><svg class="i"><use href="#i-check"/></svg>Data recovery</li><li><svg class="i"><use href="#i-check"/></svg>Hardware upgrade</li><li><svg class="i"><use href="#i-check"/></svg>Screen replacement</li><li><svg class="i"><use href="#i-check"/></svg>Free diagnosis</li></ul>
-        <a class="btn btn-glass" href="https://wa.me/255765478390?text=I%20need%20computer%20repair%20service.%20Price?" target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg>Get quote</a>
+      <div class="card price reveal">
+        <div class="ico"><svg class="i"><use href="#i-laptop"/></svg></div><h3>Computer Services</h3>
+        <div class="amt">TSh 15K<small> starting</small></div><div class="sub">Laptop &amp; desktop repair</div>
+        <ul><li><svg class="i"><use href="#i-check"/></svg>OS installation</li><li><svg class="i"><use href="#i-check"/></svg>Virus removal</li><li><svg class="i"><use href="#i-check"/></svg>Data recovery</li><li><svg class="i"><use href="#i-check"/></svg>Hardware upgrade</li><li><svg class="i"><use href="#i-check"/></svg>Screen replacement</li></ul>
+        <a class="btn btn-outline" href="https://wa.me/255765478390?text=I%20need%20computer%20repair%20service.%20Price?" target="_blank" rel="noopener">Get quote</a>
       </div>
+    </div>
+    <p class="note">Every device gets a free diagnosis before you pay anything.</p>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section id="tips">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Repair tips</span>
+      <h2>Before you bring it in</h2>
+      <p>Simple things that protect your device and your data.</p>
+    </div>
+    <div class="tips-grid">
+      <article class="card tip reveal"><div class="tip-top"></div><div class="tip-body"><div class="tag-s">Screens</div><h3>Cracked screen?</h3><p>Cover the cracks with clear tape to avoid cuts and keep dust out, and back up your data. Repair early before the touch layer fails.</p></div></article>
+      <article class="card tip reveal"><div class="tip-top"></div><div class="tip-body"><div class="tag-s">Water damage</div><h3>Phone got wet?</h3><p>Switch it off, don't charge it, and remove the case and SIM. Bring it in fast: corrosion spreads quickly. Rice doesn't help.</p></div></article>
+      <article class="card tip reveal"><div class="tip-top"></div><div class="tip-body"><div class="tag-s">Batteries</div><h3>Swollen battery</h3><p>If the back lifts or the screen bulges, stop charging and using it. Don't press or puncture it. Get it replaced right away.</p></div></article>
+      <article class="card tip reveal"><div class="tip-top"></div><div class="tag-s" style="padding:24px 24px 0">Locks</div><div class="tip-body" style="padding-top:0"><h3>Locked out?</h3><p>Bring proof you own the device and any account details you remember. We only unlock devices that belong to the customer.</p></div></article>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
+<!-- REVIEWS -->
+<section id="reviews" class="alt">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow" data-i18n="te_eyebrow">Reviews</span>
-      <h2 data-i18n="te_h2">What Customers Say</h2>
+      <h2 data-i18n="te_h2">What customers say</h2>
       <p data-i18n="te_p">Feedback from customers in Dodoma and across Tanzania.</p>
     </div>
     <div class="grid-3">
-      <div class="testi glass reveal"><div class="stars" id="s1"></div><p>“My Samsung S21 had a dead motherboard. Other shops said it's finished, but Boaz fixed it with micro-soldering in just one day. Amazing work.”</p><div class="who"><div class="avatar">JM</div><div><b>Joseph Mwanga</b><span>Dodoma, Tanzania</span></div></div></div>
-      <div class="testi glass reveal"><div class="stars" id="s2"></div><p>“I had an FRP lock on my Tecno phone and nobody could help. Boaz unlocked it in 15 minutes. Fair price and very professional.”</p><div class="who"><div class="avatar">FK</div><div><b>Fatma Khalid</b><span>Dodoma, Tanzania</span></div></div></div>
-      <div class="testi glass reveal"><div class="stars" id="s3"></div><p>“Best electronics repair shop in Dodoma. They replaced my iPhone screen with quality parts and it looks brand new. The warranty shows their confidence.”</p><div class="who"><div class="avatar">AM</div><div><b>Asha Mushi</b><span>Dodoma, Tanzania</span></div></div></div>
+      <div class="card testi reveal"><div class="stars" data-stars></div><p>“My Samsung S21 had a dead motherboard. Other shops said it's finished, but Boaz fixed it with micro-soldering in just one day. Amazing work.”</p><div class="who"><div class="avatar">JM</div><div><b>Joseph Mwanga</b><span>Dodoma, Tanzania</span></div></div></div>
+      <div class="card testi reveal"><div class="stars" data-stars></div><p>“I had an FRP lock on my Tecno phone and nobody could help. Boaz unlocked it in 15 minutes. Fair price and very professional.”</p><div class="who"><div class="avatar">FK</div><div><b>Fatma Khalid</b><span>Dodoma, Tanzania</span></div></div></div>
+      <div class="card testi reveal"><div class="stars" data-stars></div><p>“Best electronics repair shop in Dodoma. They replaced my iPhone screen with quality parts and it looks brand new. The warranty shows their confidence.”</p><div class="who"><div class="avatar">AM</div><div><b>Asha Mushi</b><span>Dodoma, Tanzania</span></div></div></div>
     </div>
   </div>
 </section>
@@ -572,51 +630,61 @@ footer{padding:70px 0 0;border-top:1px solid var(--border);background:var(--glas
 <!-- FAQ -->
 <section id="faq">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2>Common Questions</h2>
-      <p>Quick answers before you visit the shop.</p>
-    </div>
+    <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>Common questions</h2><p>Quick answers before you visit.</p></div>
     <div class="faq">
-      <div class="faq-item glass reveal"><button class="faq-q">Is the diagnosis really free?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Yes. Bring your device and we will diagnose the fault for free, then give you a clear quote before any work starts.</p></div></div>
-      <div class="faq-item glass reveal"><button class="faq-q">How long does a repair take?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Most software jobs take 15–30 minutes. Screen and battery replacements are usually done within the day, and complex board-level repairs can take up to 24 hours or more.</p></div></div>
-      <div class="faq-item glass reveal"><button class="faq-q">Do repairs come with a warranty?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Yes, every repair includes a service warranty. Ask us about the exact period for your repair when you get your quote.</p></div></div>
-      <div class="faq-item glass reveal"><button class="faq-q">Will I lose my data?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Screen, battery and most hardware repairs do not touch your data. Some software fixes (like pattern unlock or flashing) may need a reset, and we will tell you before starting.</p></div></div>
-      <div class="faq-item glass reveal"><button class="faq-q">Can I send photos of my device first?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Absolutely. Send photos or a short description on WhatsApp at +255 765 478 390 and we will give you a rough estimate.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Is the diagnosis really free?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Yes. Bring your device and we diagnose the fault for free, then give you a clear quote before any work begins.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">How long does a repair take?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Most software jobs take 15–30 minutes. Screen and battery replacements are usually done the same day, and complex board-level repairs can take up to 24 hours or more.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Do repairs come with a warranty?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Yes, every repair includes a service warranty. Ask us for the exact period when you get your quote.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Will I lose my data?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Screen, battery and most hardware repairs don't touch your data. Some software fixes, like pattern unlock or flashing, may need a reset, and we'll tell you before we start.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Do you need proof of ownership for unlocking?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>We only unlock devices that belong to the customer. Please bring a receipt, box or other proof, and any account details you remember.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Can I send photos first?<svg class="i"><use href="#i-down"/></svg></button><div class="faq-a"><p>Absolutely. Send photos or a short description on WhatsApp at +255 765 478 390 for a rough estimate.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="band reveal">
+      <h2>Broken phone? Let's crack it.</h2>
+      <p>Send a photo on WhatsApp and get a free estimate today. Repair tips and offers are shared on our social pages too.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-wa" href="https://wa.me/255765478390?text=Hello%20Boaz%20Electronics,%20I%20need%20help%20with%20my%20device." target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg>Start a chat</a>
+        <a class="btn btn-light" href="tel:+255765478390"><svg class="i"><use href="#i-phone"/></svg>Call now</a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="alt">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow" data-i18n="co_eyebrow">Contact</span>
-      <h2 data-i18n="co_h2">Get In Touch</h2>
-      <p data-i18n="co_p">Ready to get your device fixed? Reach us through any of these channels.</p>
+      <h2 data-i18n="co_h2">Get in touch</h2>
+      <p data-i18n="co_p">Ready to get your device fixed? Reach us any way you like.</p>
     </div>
     <div class="contact-grid">
       <div class="reveal">
-        <div class="c-card glass"><div class="ico"><svg class="i"><use href="#i-pin"/></svg></div><div><small>Location</small><strong>Dodoma, Tanzania</strong></div></div>
-        <div class="c-card glass"><div class="ico"><svg class="i"><use href="#i-phone"/></svg></div><div><small>Phone / WhatsApp</small><strong><a href="tel:+255765478390">+255 765 478 390</a></strong></div><button class="icon-btn copy" id="copyBtn" aria-label="Copy phone number"><svg class="i"><use href="#i-copy"/></svg></button></div>
-        <div class="c-card glass"><div class="ico"><svg class="i"><use href="#i-mail"/></svg></div><div><small>Email</small><strong><a href="mailto:boazshyndika@gmail.com">boazshyndika@gmail.com</a></strong></div></div>
-        <div class="c-card glass"><div class="ico"><svg class="i"><use href="#i-clock"/></svg></div><div><small>Working hours</small><strong>Mon – Sat: 8:00 AM – 7:00 PM</strong></div></div>
+        <div class="c-card"><div class="ico"><svg class="i"><use href="#i-pin"/></svg></div><div><small>Location</small><strong>Dodoma, Tanzania</strong></div></div>
+        <div class="c-card"><div class="ico"><svg class="i"><use href="#i-phone"/></svg></div><div><small>Phone / WhatsApp</small><strong><a href="tel:+255765478390">+255 765 478 390</a></strong></div><button class="icon-btn" id="copyBtn" aria-label="Copy phone number"><svg class="i"><use href="#i-copy"/></svg></button></div>
+        <div class="c-card"><div class="ico"><svg class="i"><use href="#i-mail"/></svg></div><div><small>Email</small><strong><a href="mailto:boazshyndika@gmail.com">boazshyndika@gmail.com</a></strong></div></div>
+        <div class="c-card"><div class="ico"><svg class="i"><use href="#i-clock"/></svg></div><div><small>Working hours</small><strong>Mon – Sat: 8:00 AM – 7:00 PM</strong></div></div>
         <div class="socials">
-          <a class="social glass" href="https://wa.me/255765478390" target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg>WhatsApp</a>
-          <a class="social glass" href="https://instagram.com/boaz_electronicz" target="_blank" rel="noopener"><svg class="i"><use href="#i-ig"/></svg>Instagram</a>
-          <a class="social glass" href="https://facebook.com/boazelectronics" target="_blank" rel="noopener"><svg class="i"><use href="#i-fb"/></svg>Facebook</a>
-          <a class="social glass" href="https://youtube.com/@boazelectronics" target="_blank" rel="noopener"><svg class="i"><use href="#i-yt"/></svg>YouTube</a>
-          <a class="social glass" href="https://tiktok.com/@boazelectronics" target="_blank" rel="noopener"><svg class="i"><use href="#i-tt"/></svg>TikTok</a>
+          <a class="social" href="https://wa.me/255765478390" target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg>WhatsApp</a>
+          <a class="social" href="https://instagram.com/boaz_electronicz" target="_blank" rel="noopener"><svg class="i"><use href="#i-ig"/></svg>Instagram</a>
+          <a class="social" href="https://facebook.com/boazelectronics" target="_blank" rel="noopener"><svg class="i"><use href="#i-fb"/></svg>Facebook</a>
+          <a class="social" href="https://youtube.com/@boazelectronics" target="_blank" rel="noopener"><svg class="i"><use href="#i-yt"/></svg>YouTube</a>
+          <a class="social" href="https://tiktok.com/@boazelectronics" target="_blank" rel="noopener"><svg class="i"><use href="#i-tt"/></svg>TikTok</a>
         </div>
       </div>
-      <form class="form glass reveal" id="contactForm" novalidate>
-        <h3><svg class="i" style="color:var(--brand)"><use href="#i-msg"/></svg>Send us a message</h3>
+      <form class="form reveal" id="contactForm" novalidate>
+        <h3>Send us a message</h3>
         <div class="fgrid">
-          <div class="fg"><label for="fName">Your name</label><input id="fName" type="text" placeholder="Full name" required autocomplete="name"><span class="err">Please enter your name</span></div>
-          <div class="fg"><label for="fPhone">Phone number</label><input id="fPhone" type="tel" placeholder="+255 7XX XXX XXX" required autocomplete="tel"><span class="err">Enter a valid phone number</span></div>
+          <div class="fg"><label for="fName">Your name</label><input id="fName" type="text" placeholder="Full name" autocomplete="name"><span class="err">Please enter your name</span></div>
+          <div class="fg"><label for="fPhone">Phone number</label><input id="fPhone" type="tel" placeholder="+255 7XX XXX XXX" autocomplete="tel"><span class="err">Enter a valid phone number</span></div>
           <div class="fg full"><label for="fDevice">Device (optional)</label><input id="fDevice" type="text" placeholder="e.g. Tecno Spark 10, iPhone 12"></div>
-          <div class="fg full"><label for="fService">Service needed</label>
-            <select id="fService" required><option value="">Select a service…</option><option>Screen Replacement</option><option>Software Unlock / FRP</option><option>Micro Soldering</option><option>Battery Replacement</option><option>Computer Repair</option><option>Buy Spare Parts</option><option>Other</option></select><span class="err">Please choose a service</span></div>
+          <div class="fg full"><label for="fService">Service needed</label><select id="fService"><option value="">Select a service…</option><option>Screen Replacement</option><option>Software Unlock / FRP</option><option>Micro Soldering</option><option>Battery Replacement</option><option>Computer Repair</option><option>Buy Spare Parts</option><option>Other</option></select><span class="err">Please choose a service</span></div>
           <div class="fg full"><label for="fMsg">Describe the problem</label><textarea id="fMsg" placeholder="Tell us about your device and the issue…"></textarea></div>
         </div>
         <button type="submit" class="btn btn-wa"><svg class="i fill"><use href="#i-wa"/></svg>Send via WhatsApp</button>
@@ -628,16 +696,13 @@ footer{padding:70px 0 0;border-top:1px solid var(--border);background:var(--glas
   </div>
 </section>
 
-<!-- CTA -->
-<section style="padding-top:0">
+<!-- BRANDS -->
+<div class="brands">
   <div class="container">
-    <div class="cta-box glass reveal">
-      <h2>Broken phone? Let's <span class="grad-text">crack it</span>.</h2>
-      <p>Send a photo on WhatsApp and get a free estimate today.</p>
-      <a class="btn btn-wa" href="https://wa.me/255765478390?text=Hello%20Boaz%20Electronics,%20I%20need%20help%20with%20my%20device." target="_blank" rel="noopener"><svg class="i fill"><use href="#i-wa"/></svg>Start a chat</a>
-    </div>
+    <h4>Brands we repair &amp; service</h4>
+    <div class="brand-row"><span>Samsung</span><span>iPhone / Apple</span><span>Huawei</span><span>Xiaomi</span><span>Oppo</span><span>Vivo</span><span>Tecno</span><span>Infinix</span><span>Nokia</span><span>Realme</span><span>Laptops</span><span>Desktops</span></div>
   </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -645,7 +710,7 @@ footer{padding:70px 0 0;border-top:1px solid var(--border);background:var(--glas
     <div class="foot-grid">
       <div>
         <a href="#home" class="brand"><span class="brand-mark"><svg class="i"><use href="#i-cpu"/></svg></span><span>BOAZ ELECTRONICS<small>Solutions · All Cracked</small></span></a>
-        <p>Professional electronics repair in Dodoma, Tanzania: phone repair, software unlocking, micro-soldering and more.</p>
+        <p>Professional electronics repair in Dodoma, Tanzania. Phone repair, software unlocking, micro-soldering and more.</p>
         <div class="foot-soc">
           <a class="icon-btn" href="https://wa.me/255765478390" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="i fill"><use href="#i-wa"/></svg></a>
           <a class="icon-btn" href="https://instagram.com/boaz_electronicz" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i"><use href="#i-ig"/></svg></a>
@@ -654,216 +719,165 @@ footer{padding:70px 0 0;border-top:1px solid var(--border);background:var(--glas
           <a class="icon-btn" href="https://tiktok.com/@boazelectronics" target="_blank" rel="noopener" aria-label="TikTok"><svg class="i"><use href="#i-tt"/></svg></a>
         </div>
       </div>
-      <div><h4>Services</h4><ul><li><a href="#services">Phone Screen Repair</a></li><li><a href="#services">Software Unlocking</a></li><li><a href="#services">Micro Soldering</a></li><li><a href="#services">Battery Replacement</a></li><li><a href="#services">Computer Repair</a></li></ul></div>
-      <div><h4>Quick Links</h4><ul><li><a href="#about">About Us</a></li><li><a href="#gallery">Our Workshop</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Fix your device</h4><ul><li><a href="#devices">Repair by device</a></li><li><a href="#services">All services</a></li><li><a href="#how">How it works</a></li><li><a href="#tips">Repair tips</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#gallery">Workshop</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+255765478390">+255 765 478 390</a></li><li><a href="mailto:boazshyndika@gmail.com">boazshyndika@gmail.com</a></li><li><a href="#contact">Dodoma, Tanzania</a></li><li><a href="#contact">Mon–Sat: 8AM – 7PM</a></li></ul></div>
     </div>
-    <div class="foot-bottom">© <span id="year"></span> Boaz Electronics Solutions. All rights reserved. Made in Dodoma, Tanzania.</div>
+    <div class="foot-bottom">© <span id="year"></span> Boaz Electronics Solutions. All rights reserved.</div>
   </div>
 </footer>
 
-<!-- floating -->
-<div class="wa-float"><a class="round" href="https://wa.me/255765478390?text=Hello%20Boaz%20Electronics,%20I%20need%20help%20with%20my%20device." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg class="i fill"><use href="#i-wa"/></svg></a><span class="wa-label glass">Chat with us!</span></div>
-<button class="icon-btn to-top glass" id="toTop" aria-label="Back to top"><svg class="i"><use href="#i-up"/></svg></button>
-<div class="toast glass" id="toast"></div>
+<a class="wa-float" href="https://wa.me/255765478390?text=Hello%20Boaz%20Electronics,%20I%20need%20help%20with%20my%20device." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg class="i fill"><use href="#i-wa"/></svg></a>
+<button class="icon-btn to-top" id="toTop" aria-label="Back to top"><svg class="i"><use href="#i-up"/></svg></button>
+<div class="toast" id="toast"></div>
 
-<!-- lightbox -->
 <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
-  <button class="icon-btn lb-btn lb-close" id="lbClose" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
-  <button class="icon-btn lb-btn lb-prev" id="lbPrev" aria-label="Previous"><svg class="i"><use href="#i-left"/></svg></button>
+  <button class="icon-btn lb lb-close" id="lbClose" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+  <button class="icon-btn lb lb-prev" id="lbPrev" aria-label="Previous"><svg class="i"><use href="#i-left"/></svg></button>
   <img id="lbImg" alt="">
-  <button class="icon-btn lb-btn lb-next" id="lbNext" aria-label="Next"><svg class="i"><use href="#i-right"/></svg></button>
+  <button class="icon-btn lb lb-next" id="lbNext" aria-label="Next"><svg class="i"><use href="#i-right"/></svg></button>
   <div class="lb-cap" id="lbCap"></div>
 </div>
 
 <script>
-const $ = (s, r=document) => r.querySelector(s);
-const $$ = (s, r=document) => [...r.querySelectorAll(s)];
-const store = {
-  get(k){ try{ return localStorage.getItem(k) }catch(e){ return null } },
-  set(k,v){ try{ localStorage.setItem(k,v) }catch(e){} }
-};
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const WA='255765478390';
+const waLink=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+$('#year').textContent=new Date().getFullYear();
+$$('[data-stars]').forEach(s=>s.innerHTML='<svg class="i"><use href="#i-star"/></svg>'.repeat(5));
 
-/* year */
-$('#year').textContent = new Date().getFullYear();
-
-/* star ratings */
-['s1','s2','s3'].forEach(id => $('#'+id).innerHTML = '<svg class="i"><use href="#i-star"/></svg>'.repeat(5));
-
-/* brand marquee */
-const brands = ['Samsung','iPhone / Apple','Huawei','Xiaomi','Oppo','Vivo','Tecno','Infinix','Nokia','Realme','Laptops','Desktops'];
-const track = $('#brandTrack');
-const brandHTML = brands.map(b => `<span><svg class="i" style="color:var(--brand)"><use href="#i-${/Laptop|Desktop/.test(b)?'laptop':'smartphone'}"/></svg>${b}</span>`).join('');
-track.innerHTML = brandHTML + brandHTML;
+/* toast */
+const toast=$('#toast');
+function say(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}
 
 /* theme */
-const root = document.documentElement;
-const savedTheme = store.get('boaz-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-root.dataset.theme = savedTheme;
-$('#themeBtn').onclick = () => {
-  root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  store.set('boaz-theme', root.dataset.theme);
-  $('meta[name=theme-color]').content = root.dataset.theme === 'dark' ? '#0b0f1a' : '#f3f5fa';
-};
+const root=document.documentElement;
+root.dataset.theme=store.get('boaz-theme')||'light';
+$('#themeBtn').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';store.set('boaz-theme',root.dataset.theme)};
 
-/* language (EN / Kiswahili) */
-const SW = {
-  nav_home:'Mwanzo', nav_services:'Huduma', nav_about:'Kuhusu', nav_gallery:'Picha', nav_pricing:'Bei', nav_contact:'Mawasiliano',
-  hero_h1:'Matengenezo Bora ya <span class="grad-text">Vifaa vya Kielektroniki</span> na <span class="grad-text">Suluhisho</span> Dodoma',
-  hero_p:'Matengenezo ya simu, kufungua software, micro-soldering na huduma za kompyuta. Tunarekebisha ambavyo wengine hawawezi.',
-  cta_wa:'Ongea WhatsApp', cta_call:'Piga Simu', cta_services:'Huduma Zetu',
-  st_devices:'Vifaa Vilivyotengenezwa', st_cust:'Wateja Wenye Furaha', st_years:'Miaka ya Uzoefu',
-  svc_eyebrow:'Tunachofanya', svc_h2:'Huduma Zetu', svc_p:'Kutoka software hadi hardware ya ndani ya bodi, tunashughulikia yote mahali pamoja.',
-  ab_eyebrow:'Kuhusu sisi', ab_h2:'Mtaalamu Unayemwamini wa <span class="grad-text">Elektroniki</span> Dodoma',
-  ab_p:'Kwa zaidi ya miaka 8 tumehudumia wateja Dodoma kwa matengenezo ya simu, software na micro-soldering. Kauli yetu: “All Cracked” — tunatatua kila tatizo.',
-  gal_eyebrow:'Ndani ya duka', gal_h2:'Karakana Yetu', gal_p:'Angalia ndani ya karakana yetu ya kitaalamu Dodoma. Gusa picha kuikuza.',
-  why_eyebrow:'Kwa nini sisi', why_h2:'Kwa Nini Kuchagua <span class="grad-text">Boaz Electronics?</span>',
-  pr_eyebrow:'Bei', pr_h2:'Bei za Huduma', pr_p:'Bei wazi na nafuu. Gharama ya mwisho hutegemea kifaa na tatizo.',
-  te_eyebrow:'Maoni', te_h2:'Wateja Wanasemaje', te_p:'Maoni kutoka kwa wateja Dodoma na Tanzania nzima.',
-  co_eyebrow:'Mawasiliano', co_h2:'Wasiliana Nasi', co_p:'Uko tayari kutengeneza kifaa chako? Tufikie kupitia njia yoyote hapa chini.'
+/* language */
+const SW={
+ nav_contact:'Mawasiliano',
+ hero_h1:'Usikubali <em>kuharibika</em> kuwa jibu la mwisho',
+ hero_p:'Matengenezo ya simu, kufungua software, micro-soldering na huduma za kompyuta Dodoma. Tunarekebisha ambavyo wengine hawawezi.',
+ svc_eyebrow:'Huduma', svc_h2:'Kila tunachotengeneza', svc_p:'Kutoka software hadi hardware ya ndani ya bodi, mahali pamoja.',
+ ab_eyebrow:'Kuhusu sisi', ab_h2:'Mtaalamu unayemwamini wa elektroniki Dodoma',
+ gal_eyebrow:'Ndani ya duka', gal_h2:'Karakana yetu', gal_p:'Gusa picha kuikuza.',
+ pr_eyebrow:'Bei', pr_h2:'Bei wazi na nafuu', pr_p:'Bei za kuanzia. Gharama ya mwisho hutegemea kifaa na tatizo.',
+ te_eyebrow:'Maoni', te_h2:'Wateja wanasemaje', te_p:'Maoni kutoka kwa wateja Dodoma na Tanzania nzima.',
+ co_eyebrow:'Mawasiliano', co_h2:'Wasiliana nasi', co_p:'Uko tayari kutengeneza kifaa chako? Tufikie kwa njia yoyote.'
 };
-let lang = store.get('boaz-lang') || 'en';
-const i18nEls = $$('[data-i18n]');
-i18nEls.forEach(el => el.dataset.en = el.innerHTML);
+let lang=store.get('boaz-lang')||'en';
+const i18n=$$('[data-i18n]'); i18n.forEach(e=>e.dataset.en=e.innerHTML);
 function applyLang(){
-  i18nEls.forEach(el => { const k = el.dataset.i18n; el.innerHTML = (lang==='sw' && SW[k]) ? SW[k] : el.dataset.en; });
-  $('#langBtn').textContent = lang === 'sw' ? 'SW' : 'EN';
-  root.lang = lang;
-  updateOpen();
+  i18n.forEach(e=>{const k=e.dataset.i18n;e.innerHTML=(lang==='sw'&&SW[k])?SW[k]:e.dataset.en});
+  $('#langBtn').textContent=lang==='sw'?'SW':'EN'; root.lang=lang; updateOpen();
 }
-$('#langBtn').onclick = () => { lang = lang === 'en' ? 'sw' : 'en'; store.set('boaz-lang', lang); applyLang(); };
+$('#langBtn').onclick=()=>{lang=lang==='en'?'sw':'en';store.set('boaz-lang',lang);applyLang()};
 
-/* open now (Dodoma time) */
+/* open status (Dodoma time) */
 function updateOpen(){
-  const parts = new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Dar_es_Salaam',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date());
-  const day = parts.find(p=>p.type==='weekday').value;
-  const hour = +parts.find(p=>p.type==='hour').value % 24;
-  const open = day !== 'Sun' && hour >= 8 && hour < 19;
-  $('#openDot').className = 'dot ' + (open ? 'open' : 'closed');
-  $('#openText').textContent = open
-    ? (lang==='sw' ? 'Tumefungua sasa · Dodoma' : 'Open now · Dodoma, Tanzania')
-    : (lang==='sw' ? 'Tumefungwa · Tunafungua Jumatatu–Jumamosi 8AM–7PM' : 'Closed now · Mon–Sat 8AM–7PM');
+  const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Dar_es_Salaam',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date());
+  const day=p.find(x=>x.type==='weekday').value, h=+p.find(x=>x.type==='hour').value%24;
+  const open=day!=='Sun'&&h>=8&&h<19;
+  $('#openDot').className='dot '+(open?'open':'closed');
+  $('#openText').textContent=open?(lang==='sw'?'Tumefungua sasa':'Open now · Dodoma'):(lang==='sw'?'Tumefungwa · Jumatatu–Jumamosi 8AM–7PM':'Closed · Mon–Sat 8AM–7PM');
 }
-setInterval(updateOpen, 60000);
+setInterval(updateOpen,60000);
 applyLang();
 
-/* nav: scroll progress, burger, active link */
-const nav = $('#navLinks'), burger = $('#burger');
-burger.onclick = () => {
-  const o = nav.classList.toggle('open');
-  burger.innerHTML = `<svg class="i"><use href="#i-${o?'x':'menu'}"/></svg>`;
-};
-$$('#navLinks a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); burger.innerHTML = '<svg class="i"><use href="#i-menu"/></svg>'; }));
-document.addEventListener('click', e => { if(!nav.contains(e.target) && !burger.contains(e.target)) nav.classList.remove('open'); });
+/* mobile nav */
+const nav=$('#nav'), burger=$('#burger');
+const setNav=o=>{nav.classList.toggle('open',o);burger.innerHTML=`<svg class="i"><use href="#i-${o?'x':'menu'}"/></svg>`};
+burger.onclick=()=>setNav(!nav.classList.contains('open'));
+$$('#nav a').forEach(a=>a.addEventListener('click',()=>setNav(false)));
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!burger.contains(e.target))setNav(false)});
 
-const bar = $('#progress'), toTop = $('#toTop');
-addEventListener('scroll', () => {
-  const h = document.documentElement;
-  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
-  toTop.classList.toggle('show', h.scrollTop > 600);
-}, {passive:true});
-toTop.onclick = () => scrollTo({top:0, behavior:'smooth'});
-
-const secObs = new IntersectionObserver(es => es.forEach(e => {
-  if(e.isIntersecting){
-    $$('#navLinks a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
-  }
-}), {rootMargin:'-45% 0px -50% 0px'});
-$$('section[id]').forEach(s => secObs.observe(s));
+/* scroll */
+const bar=$('#progress'), toTop=$('#toTop');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  toTop.classList.toggle('show',h.scrollTop>600);
+},{passive:true});
+toTop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 
 /* reveal + counters */
-const revObs = new IntersectionObserver((es, o) => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); o.unobserve(e.target); } }), {threshold:.12});
-$$('.reveal').forEach(el => revObs.observe(el));
-
+const ro=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.1});
+$$('.reveal').forEach(e=>ro.observe(e));
 function countUp(el){
-  const target = +el.dataset.count, suffix = el.dataset.suffix || '';
-  const start = performance.now(), dur = 1800;
-  (function tick(t){
-    const p = Math.min((t - start) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(target * eased).toLocaleString() + suffix;
-    if(p < 1) requestAnimationFrame(tick);
+  const t=+el.dataset.count, suf=el.dataset.suffix||'', small=$('small',el);
+  const start=performance.now(), dur=1600;
+  (function tick(n){
+    const p=Math.min((n-start)/dur,1), v=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString()+suf;
+    el.firstChild.textContent=v;
+    if(p<1)requestAnimationFrame(tick);
   })(start);
 }
-const cObs = new IntersectionObserver((es, o) => es.forEach(e => { if(e.isIntersecting){ countUp(e.target); o.unobserve(e.target); } }), {threshold:.6});
-$$('[data-count]').forEach(el => cObs.observe(el));
+const co=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);o.unobserve(e.target)}}),{threshold:.6});
+$$('[data-count]').forEach(e=>co.observe(e));
+
+/* hero finder */
+const fin=$('#finderInput');
+$$('#quick button').forEach(b=>b.onclick=()=>{fin.value=b.textContent+' ';fin.focus()});
+$('#finder').addEventListener('submit',e=>{
+  e.preventDefault();
+  const d=fin.value.trim();
+  window.open(waLink(d?`Hello Boaz Electronics, I need a free estimate for my device: ${d}`:'Hello Boaz Electronics, I need a free estimate for my device.'),'_blank','noopener');
+});
+$$('.dev').forEach(b=>b.onclick=()=>window.open(waLink(`Hello Boaz Electronics, I need help with my ${b.dataset.dev}.`),'_blank','noopener'));
 
 /* service filter */
-$$('#filters .chip').forEach(ch => ch.onclick = () => {
-  $$('#filters .chip').forEach(c => c.classList.remove('active'));
-  ch.classList.add('active');
-  $$('#svcGrid .card').forEach(c => c.classList.toggle('hide', ch.dataset.f !== 'all' && c.dataset.cat !== ch.dataset.f));
+$$('#tabs .tab').forEach(t=>t.onclick=()=>{
+  $$('#tabs .tab').forEach(x=>x.classList.remove('active')); t.classList.add('active');
+  $$('#svcGrid .card').forEach(c=>c.classList.toggle('hide',t.dataset.f!=='all'&&c.dataset.cat!==t.dataset.f));
 });
 
-/* card spotlight */
-$$('.card').forEach(c => c.addEventListener('pointermove', e => {
-  const r = c.getBoundingClientRect();
-  c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-  c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-}));
-
-/* FAQ */
-$$('.faq-item').forEach(item => {
-  const q = $('.faq-q', item), a = $('.faq-a', item);
-  q.onclick = () => {
-    const open = item.classList.contains('open');
-    $$('.faq-item.open').forEach(o => { o.classList.remove('open'); $('.faq-a', o).style.maxHeight = 0; });
-    if(!open){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+/* faq */
+$$('.faq-item').forEach(it=>{
+  const a=$('.faq-a',it);
+  $('.faq-q',it).onclick=()=>{
+    const was=it.classList.contains('open');
+    $$('.faq-item.open').forEach(o=>{o.classList.remove('open');$('.faq-a',o).style.maxHeight=0});
+    if(!was){it.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
   };
 });
 
 /* lightbox */
-const items = $$('.gal'), lb = $('#lightbox'), lbImg = $('#lbImg'), lbCap = $('#lbCap');
-let cur = 0;
-function showLb(i){
-  cur = (i + items.length) % items.length;
-  const img = $('img', items[cur]);
-  lbImg.src = img.src; lbImg.alt = img.alt;
-  lbCap.textContent = $('figcaption b', items[cur]).textContent;
-}
-items.forEach((it, i) => it.onclick = () => { showLb(i); lb.classList.add('open'); });
-$('#lbClose').onclick = () => lb.classList.remove('open');
-$('#lbPrev').onclick = () => showLb(cur - 1);
-$('#lbNext').onclick = () => showLb(cur + 1);
-lb.onclick = e => { if(e.target === lb) lb.classList.remove('open'); };
-addEventListener('keydown', e => {
-  if(!lb.classList.contains('open')) return;
-  if(e.key === 'Escape') lb.classList.remove('open');
-  if(e.key === 'ArrowLeft') showLb(cur - 1);
-  if(e.key === 'ArrowRight') showLb(cur + 1);
+const gal=$$('.gal'), lb=$('#lightbox'); let cur=0;
+function show(i){cur=(i+gal.length)%gal.length;const im=$('img',gal[cur]);$('#lbImg').src=im.src;$('#lbImg').alt=im.alt;$('#lbCap').textContent=$('figcaption',gal[cur]).textContent}
+gal.forEach((g,i)=>g.onclick=()=>{show(i);lb.classList.add('open')});
+$('#lbClose').onclick=()=>lb.classList.remove('open');
+$('#lbPrev').onclick=()=>show(cur-1);
+$('#lbNext').onclick=()=>show(cur+1);
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')lb.classList.remove('open');
+  if(e.key==='ArrowLeft')show(cur-1);
+  if(e.key==='ArrowRight')show(cur+1);
 });
 
-/* toast + copy */
-const toast = $('#toast');
-function say(msg){ toast.textContent = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2400); }
-$('#copyBtn').onclick = async () => {
-  try{ await navigator.clipboard.writeText('+255765478390'); say('Phone number copied'); }
-  catch(e){ say('+255 765 478 390'); }
-};
+/* copy phone */
+$('#copyBtn').onclick=async()=>{try{await navigator.clipboard.writeText('+255765478390');say('Phone number copied')}catch(e){say('+255 765 478 390')}};
 
-/* contact form -> WhatsApp */
-const form = $('#contactForm');
-form.addEventListener('submit', e => {
+/* contact form */
+const form=$('#contactForm');
+form.addEventListener('submit',e=>{
   e.preventDefault();
-  const f = { name:$('#fName'), phone:$('#fPhone'), service:$('#fService') };
-  let ok = true;
-  const mark = (el, valid) => { el.closest('.fg').classList.toggle('invalid', !valid); if(!valid) ok = false; };
-  mark(f.name, f.name.value.trim().length > 1);
-  mark(f.phone, /^[+\d][\d\s-]{6,}$/.test(f.phone.value.trim()));
-  mark(f.service, !!f.service.value);
-  if(!ok){ say('Please fix the highlighted fields'); return; }
-  const lines = [
-    'Hello Boaz Electronics!',
-    '',
-    '*Name:* ' + f.name.value.trim(),
-    '*Phone:* ' + f.phone.value.trim(),
-    $('#fDevice').value.trim() ? '*Device:* ' + $('#fDevice').value.trim() : null,
-    '*Service:* ' + f.service.value,
-    $('#fMsg').value.trim() ? '*Problem:* ' + $('#fMsg').value.trim() : null
-  ].filter(l => l !== null).join('\n');
+  let ok=true;
+  const chk=(el,v)=>{el.closest('.fg').classList.toggle('invalid',!v);if(!v)ok=false};
+  chk($('#fName'),$('#fName').value.trim().length>1);
+  chk($('#fPhone'),/^[+\d][\d\s-]{6,}$/.test($('#fPhone').value.trim()));
+  chk($('#fService'),!!$('#fService').value);
+  if(!ok){say('Please fix the highlighted fields');return}
+  const dev=$('#fDevice').value.trim(), msg=$('#fMsg').value.trim();
+  const text=['Hello Boaz Electronics!','','*Name:* '+$('#fName').value.trim(),'*Phone:* '+$('#fPhone').value.trim(),dev?'*Device:* '+dev:null,'*Service:* '+$('#fService').value,msg?'*Problem:* '+msg:null].filter(x=>x!==null).join('\n');
   say('Opening WhatsApp…');
-  setTimeout(() => { window.open('https://wa.me/255765478390?text=' + encodeURIComponent(lines), '_blank', 'noopener'); form.reset(); }, 600);
+  setTimeout(()=>{window.open(waLink(text),'_blank','noopener');form.reset()},600);
 });
-$$('#contactForm input, #contactForm select').forEach(el => el.addEventListener('input', () => el.closest('.fg').classList.remove('invalid')));
+$$('#contactForm input,#contactForm select').forEach(el=>el.addEventListener('input',()=>el.closest('.fg').classList.remove('invalid')));
 </script>
 </body>
 </html>
